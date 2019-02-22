@@ -37,3 +37,7 @@ int connect(int sock, struct sockaddr* addr, socklen_t* addrlen);
 > 客户端调用connect函数后只有在以下情况之一才会返回：<br>
 - 服务端接受连接请求
 - 发生网络中断等异常情况
+
+服务器端代码hello_server.c
+```
+```
