@@ -20,4 +20,8 @@ int socket(int domain, int type, int protocol);
 
 **Type 套接字类型**
 ipv4（PF_INET）协议族中也存在多种方式，例如TCP和UDP，所以需要我们制定第二个参数。
-1. 面向连接的套接字（SOCKET_STEAM）
+1. 面向连接的套接字（SOCKET_STREAM）
+2. 面向消息的套接字（SOCKET_DGRAM）
+
+SOCKET_STREAM
+`
