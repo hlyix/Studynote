@@ -29,7 +29,7 @@ int accept(int sock, struct sockaddr* addr, socklen_t* addrlen);
 //成功时返回创建的套接字，失败时返回-1
 //相当于银行办事员，通过了门卫就可以入行办理输入输出业务
 ```
-## 客户端发起连接请求
+## 客户端发起连接请求(客户端只调用其即可)
 ```
 int connect(int sock, struct sockaddr* addr, socklen_t* addrlen);
 //成功时返回0，失败时返回-1
