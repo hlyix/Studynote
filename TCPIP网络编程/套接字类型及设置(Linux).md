@@ -13,6 +13,6 @@ int socket(int domain, int type, int protocol);
 |-|-|
 |PF_INET|IPv4互联网协议族|
 |PF_INET6|IPv6互联网协议族|
-|PF_INET|IPv4互联网协议族|
-|PF_INET|IPv4互联网协议族|
+|PF_LOCAL|本地通信的UNIX协议族|
+|PF_PACKET|底层协议族|
 |PF_INET|IPv4互联网协议族|
