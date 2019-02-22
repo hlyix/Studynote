@@ -28,4 +28,4 @@ SOCKET_STREAM
 - 按序传输数据
 - 传输的数据不存在数据边界BOUNDARY
 
-这里解释一下第三个BOUNDARY，此处的意思就是，
+这里解释一下第三个BOUNDARY，此处的意思就是，read（接收）和write（写出）的次数不一定是一样的，可能一次write完成
