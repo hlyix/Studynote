@@ -148,8 +148,9 @@ int main(int argc, char* argv[]){
         int writeLen = write(sock, buf, strlen(buf));
 
         int readLen = 0;
-        while(readLen < writeLen){
-            int bytes = read(sock, &buf[readLen], sizeof(buf)-readLen-1);//减一是因为最后还得加一个
+        while(readLen < writeLen){//此处解决了TCP的read和write无边界的问题
+            int bytes = read(sock, &buf[readLen], sizeof(buf)-readLen-1);
+           //减一是因为最后还得加一个字符0作为结尾
 
             if(bytes == -1){
                 errorHandling("read() error!");
