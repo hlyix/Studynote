@@ -73,7 +73,7 @@ int main(int argc, char* argv[]){
     }
 
     char buf[32];
-    for(int i=0;i<5;i++){ //此处循环，可以轮流接待5个接口，缺点
+    for(int i=0;i<5;i++){ //此处循环，可以轮流接待5个接口，缺点是每次都要打开新接口
         int sockClient = accept(sockServ, 0, 0);
 
         if(-1 == sockClient) errorHandling("acept() error!");
@@ -81,7 +81,7 @@ int main(int argc, char* argv[]){
 
         while(1){
             int readLen = read(sockClient, buf, sizeof(buf));
-            if(readLen == 0){ //直到没有数据来为止，所以不用担心read次数
+            if(readLen == 0){ //直到没有数据来为止，所以不用担心read次数问题
                 puts(" Client disconnected...");
                 close(sockClient);
                 break;
