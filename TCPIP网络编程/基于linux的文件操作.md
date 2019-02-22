@@ -2,7 +2,7 @@
 在linux的世界socket也被称为文件的一种，在创建文件时会返回专属的文件描述符fd(file discription)，在windows中被称作位句柄，其数字用宏进行了重新定义。
 
 |文件描述符|对象|
-|-|-|-|
+|--|--|
 |0|标准输入：sdtin|
 |1|标准输出：stdout|
 |2|标准错误：stderr|
@@ -38,7 +38,7 @@ ssize_t read(int fd, void* buf, size_t nbytes);
 
 **文件的打开模式**
 |打开模式|含义|
-|-|-|
+|--|--|
 |O_CREATE|必要时创建文件|
 |O_TRUNC|删除全部现有数据|
 |O_APPEND|维持现有数据，保存到其后面|
