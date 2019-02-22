@@ -15,4 +15,8 @@ int socket(int domain, int type, int protocol);
 |PF_INET6|IPv6互联网协议族|
 |PF_LOCAL|本地通信的UNIX协议族|
 |PF_PACKET|底层套接字协议族|
-|PF_IPX|IPX|
+|PF_IPX|IPX Novell协议族|
+
+
+**Type 套接字类型**
+
