@@ -118,5 +118,6 @@ linux下运行
 ```
 # gcc tcp_client.c -o hclient
 # ./hclient 127.0.0.1 9190
-Message from server: Hello Wor
+Message from server: Hello World!
+Function read call count: 13
 ```
