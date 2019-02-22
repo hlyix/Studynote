@@ -149,7 +149,7 @@ int main(int argc, char* argv[]){
 
         int readLen = 0;
         while(readLen < writeLen){
-            int bytes = read(sock, &buf[readLen], sizeof(buf)-readLen-1);
+            int bytes = read(sock, &buf[readLen], sizeof(buf)-readLen-1);//减一是因为最后还得加一个
 
             if(bytes == -1){
                 errorHandling("read() error!");
