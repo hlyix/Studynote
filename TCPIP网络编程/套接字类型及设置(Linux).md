@@ -47,5 +47,5 @@ SOCKET_DGRAM
 - 创建IPv4中面向连接的套接字
 ```int tcp_socket = socket(PF_INET,SOCK_STREAM,IPPROTO_TCP)```
 
-由于IPv4中面向连接的套接字只有
+由于IPv4中面向连接的套接字只有一个：TCP协议，故第三个参数可以传递为0；
 
