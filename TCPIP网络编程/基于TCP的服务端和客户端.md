@@ -73,7 +73,7 @@ int main(int argc, char* argv[]){
     }
 
     char buf[32];
-    for(int i=0;i<5;i++){
+    for(int i=0;i<5;i++){ //此处循环，可以轮流接待5个接口，缺点
         int sockClient = accept(sockServ, 0, 0);
 
         if(-1 == sockClient) errorHandling("acept() error!");
