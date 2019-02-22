@@ -46,5 +46,6 @@ SOCKET_DGRAM
 例如：
 - 创建IPv4中面向连接的套接字
 ```int tcp_socket = socket(PF_INET,SOCK_STREAM,IPPROTO_TCP)```
-由于
+
+由于IPv4中面向连接的套接字只有
 
