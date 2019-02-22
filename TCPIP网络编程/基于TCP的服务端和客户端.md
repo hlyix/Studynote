@@ -81,7 +81,7 @@ int main(int argc, char* argv[]){
 
         while(1){
             int readLen = read(sockClient, buf, sizeof(buf));
-            if(readLen == 0){
+            if(readLen == 0){ //直到没有数据来为止，所以不用担心read次数
                 puts(" Client disconnected...");
                 close(sockClient);
                 break;
