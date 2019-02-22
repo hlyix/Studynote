@@ -17,6 +17,7 @@
 
 int listen(int sock, int backlog);
 //成功时返回０，失败时返回-1
+//相当于门卫，看是否有连接请求
 ```
 - sock:希望进入等待连接请求状态的套接字，该套接字成为服务端套接字
 - backlog:连接请求等待队列的长度，若为５则表示最多有五个连接请求进入等待队列
@@ -26,6 +27,7 @@ int listen(int sock, int backlog);
 
 int accept(int sock, struct sockaddr* addr, socklen_t* addrlen);
 //成功时返回创建的套接字，失败时返回-1
+//相当于银行办事员，通过了门卫就可以入行办理输入输出业务
 ```
 ## 客户端发起连接请求
 ```
