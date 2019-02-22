@@ -104,4 +104,6 @@ void errorHandling(const char* message){
     exit(1);
 }
 ```
-客户端代码echo_server.c
+客户端代码echo_client2.c（解决了read没完全读取便退出循环的问题）
+```
+```
