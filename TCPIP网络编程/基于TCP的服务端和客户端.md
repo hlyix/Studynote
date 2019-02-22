@@ -38,7 +38,7 @@ int connect(int sock, struct sockaddr* addr, socklen_t* addrlen);
 - 服务端接受连接请求
 - 发生网络中断等异常情况
 
-服务器端代码hello_server.c
+服务器端代码echo_server.c
 ```
 
 ```
