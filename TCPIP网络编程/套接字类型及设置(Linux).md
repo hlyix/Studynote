@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    sock = socket(PF_INET,SOCK_STREAM,0);
+    sock = socket(PF_INET,SOCK_STREAM,0);//建立
     if(sock == -1)
       error_handling("socket() error");
 
