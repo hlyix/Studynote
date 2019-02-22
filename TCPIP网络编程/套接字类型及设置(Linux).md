@@ -8,4 +8,7 @@ int socket(int domain, int type, int protocol);
 - type 套接字数据传输类型信息
 - protocol 计算机间通信中使用的协议信息
 
-**domain 协议族信息(protocol )**
+**domain 协议族信息(protocol family)**
+|名称|协议族|
+|-|-|
+|content1|content2|
