@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    sock = socket(PF_INET,SOCK_STREAM,0);//建立
+    sock = socket(PF_INET,SOCK_STREAM,0);//建立tcp套接字端口
     if(sock == -1)
       error_handling("socket() error");
 
@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
     if(connect(sock,(struct sockaddr*)&serv_addr,sizeof(serv_addr))==-1)
       error_handling("connect() error");
 
-    while(read_len = read(sock,&message[idx++],1)){
+    while(read_len = read(sock,&message[idx++],1)){//read返回读取的字节数
         if(read_len == -1)
         error_handling("read() error!");
         
@@ -114,3 +114,4 @@ void error_handling(char* message){
 }
 
 ```
+linux下运行
