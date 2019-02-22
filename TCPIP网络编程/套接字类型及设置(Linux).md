@@ -42,3 +42,7 @@ SOCKET_DGRAM
 **protocol协议的最终选择**
 
 由于同一个协议族可能有多个数据传输方式相同的协议，所以需要通过第三个参数制定具体的协议信息。
+
+例如：
+创建IPv4中面向连接的套接字
+```int tcp_socket = socket(PF_INET,SOCK_STREAM,)```
