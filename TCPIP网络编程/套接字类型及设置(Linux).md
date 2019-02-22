@@ -31,6 +31,6 @@ SOCKET_STREAM
 这里解释一下第三个BOUNDARY，此处的意思就是，read（接收）和write（写出）的次数不一定是一样的，可能一次write完成而read两次完成。
 
 SOCKET_DGRAM
-- 传输过程中数据不会消失（数据丢失重传）
+- 强调快速传输
 - 按序传输数据
 - 传输的数据不存在数据边界BOUNDARY
