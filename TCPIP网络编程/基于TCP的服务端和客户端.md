@@ -73,7 +73,8 @@ int main(int argc, char* argv[]){
     }
 
     char buf[32];
-    for(int i=0;i<5;i++){ //此处循环，可以轮流接待5个接口，缺点是每次都要打开新接口
+//此处循环，可以轮流接待5个接口，缺点是每次都要打开新接口accept，无法保存sockClient端口
+    for(int i=0;i<5;i++){ 
         int sockClient = accept(sockServ, 0, 0);
 
         if(-1 == sockClient) errorHandling("acept() error!");
@@ -103,3 +104,4 @@ void errorHandling(const char* message){
     exit(1);
 }
 ```
+客户端代码echo_server.c
