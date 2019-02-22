@@ -9,8 +9,9 @@ int socket(int domain, int type, int protocol);
 - protocol 计算机间通信中使用的协议信息
 
 **domain 协议族信息(protocol family)**
+
 |名称|协议族|
-|-|-|
+|--|--|
 |PF_INET|IPv4互联网协议族|
 |PF_INET6|IPv6互联网协议族|
 |PF_LOCAL|本地通信的UNIX协议族|
@@ -48,4 +49,5 @@ SOCKET_DGRAM
 ```int tcp_socket = socket(PF_INET,SOCK_STREAM,IPPROTO_TCP)```
 
 由于IPv4中面向连接的套接字只有一个：TCP协议，故第三个参数可以传递为0；
+- 创建IPv4中面向连接的套接字
 
