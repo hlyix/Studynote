@@ -118,7 +118,7 @@ Map<Currency,List<Transaction>> transactionsByCurrencies =
  import static java.util.stream.Collections.toList;
  List<Apple> heavyApples = inventory.parallelStream().filter((Apple) -> a.getWeight() > 150).collection(toList());
 ```
-![123](pic/1.jpg)
+![picture](pic/1.jpg)
 
 
 ### 三、默认方法
