@@ -28,4 +28,8 @@ Mysql会解析查询，并创建内部数据结构（解析树），然后对其
 
 ## 1.3 事务
 一个事务，要么全部执行改组查询，只要其中一个失败那就都不执行。
-可以使用START TRANSACTION语句开始一个事务，然后
+可以使用START TRANSACTION语句开始一个事务，然后要么使用COMMIT提交事务将修改的数据永久保存，要么用ROLLBACK撤销所有的修改：
+```
+START TRANSACTION
+SELECT
+```
