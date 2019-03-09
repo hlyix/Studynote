@@ -36,3 +36,7 @@ UPDATE checkings SET balance = balance - 200.00 WHERE customer_id = 10233276;
 UPDATE savings SET balance = balance + 200.00 WHERE customer_id = 10233276;
 COMMIT;
 ```
+
+事务的ACID四个属性：
+1、原子性
+一个事物要么全部执行
