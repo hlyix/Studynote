@@ -69,4 +69,6 @@ mysql> SET AUTOCOMMIT = 1;
 也可以利用SET TRANSACION ISOLATION LEVEL READ COMMITED;
 
 ## 1.4 多版本并发控制
-MySql大多数事务型存储引擎实现的都不是简单的行级锁。
+MySql大多数事务型存储引擎实现的都不是简单的行级锁。一般都实现了多版本的并发控制MVCC。
+典型的由乐观并发控制和悲观并发控制。
+
