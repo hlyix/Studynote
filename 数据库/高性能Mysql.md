@@ -64,4 +64,5 @@ Mysql默认采用自动提交的模式，也就是说写一句查询就提交一
 mysql> SET AUTOCOMMIT = 1;
 ```
 1表示启用，0表示禁用。
-但是有一些SQL语句比如Alert 和lock关于执行
+但是有一些SQL语句比如Alert 和lock还是会按照一句一个事务执行，即使设置为0。
+
