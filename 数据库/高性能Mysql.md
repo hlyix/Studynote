@@ -69,4 +69,4 @@ mysql> SET AUTOCOMMIT = 1;
 也可以利用SET TRANSACION ISOLATION LEVEL READ COMMITED;
 
 ## 1.4 多版本并发控制
-MySql大多数事务型存储引擎实现的
+MySql大多数事务型存储引擎实现的都不是简单的行级锁。
