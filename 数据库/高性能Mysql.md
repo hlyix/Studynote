@@ -66,4 +66,5 @@ mysql> SET AUTOCOMMIT = 1;
 1表示启用，0表示禁用。
 但是有一些SQL语句比如Alert 和lock还是会按照一句一个事务执行，即使设置为0。
 
-也可以利用SET TRANSACION ISOLATION
+也可以利用SET TRANSACION ISOLATION LEVEL READ COMMITED;
+- 
