@@ -67,4 +67,6 @@ mysql> SET AUTOCOMMIT = 1;
 但是有一些SQL语句比如Alert 和lock还是会按照一句一个事务执行，即使设置为0。
 
 也可以利用SET TRANSACION ISOLATION LEVEL READ COMMITED;
-- 
+
+## 1.4 多版本并发控制
+MySql大多数事务型存储引擎实现的
