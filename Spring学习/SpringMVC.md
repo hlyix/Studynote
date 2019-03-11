@@ -15,7 +15,7 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
   
-    @RequestMapping("admin_category_list")
+    @RequestMapping("admin_category_list")//表示访问这个链接的时候，return(admin/listCategory视图)
     public String list(Model model){
         List<Category> cs= categoryService.list();
         model.addAttribute("cs", cs);
