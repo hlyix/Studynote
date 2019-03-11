@@ -27,5 +27,46 @@ public class CategoryController {
 
 # 关于SpringMVC的配置文件
 ```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+ 
+    <!--启动注解识别-->
+    <context:annotation-config/>
+ 
+    <context:component-scan base-package="com.how2java.tmall.controller">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+ 
+    <mvc:annotation-driven />
+ 
+    <!--开通静态资源的访问-->
+    <mvc:default-servlet-handler />
+ 
+    <!-- 视图定位 -->
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+ 
+    <!-- 对上传文件的解析-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+</beans>
+```
 
+## 然后修改web的文件
+修改web.xml，主要提供如下功能
+1. 指定spring的配置文件为classpath下的applicationContext.xml
+2. 设置中文过滤器
+3. 指定spring mvc配置文件为classpath下的springMVC.xml
+```
 ```
