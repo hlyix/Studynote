@@ -6,3 +6,5 @@
 服务类，用于处理Mapper取出数据库，做对应的服务。
 4.ServiceImp类
 用于实现服务接口的类
+5.Controller
+用于连接网页，用@RequestMapping（""）取出
