@@ -8,5 +8,5 @@
 - 线程私有
 - 每个方法执行时都会创建一个栈帧，包含：
 a)局部变量表b)操作数栈c)动态链接d)方法出口
->  - 局部变量表:编译期可知的基本数据类型(int byte long...)、对象引用(reference)、return的类型
+>  - 局部变量表:编译期可知的基本数据类型(int byte long...)、对象引用(reference)、return的类型。---其中除了double和long占两个局部变量空间slot，其他都是一
 
