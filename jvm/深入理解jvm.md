@@ -28,4 +28,4 @@ a)局部变量表b)操作数栈c)动态链接d)方法出口
 
 ## 7. 直接内存
 - 不是运行时数据区的一部分
-- 例如NIO，基于通道(Channel)与缓冲(Buffer)的I/O方式，他可以直接使用Nativeh函数直接分配堆外内存，然后通过储存在Java堆中的DirectByteBuffer
+- 例如NIO，基于通道(Channel)与缓冲(Buffer)的I/O方式，他可以直接使用Nativeh函数直接分配堆外内存，然后通过储存在Java堆中的DirectByteBuffer对象作为这块内存的引用
