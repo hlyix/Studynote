@@ -85,7 +85,24 @@ Java虚拟机定义了两种栈异常
 - 定义了大量的本地变量，增大方法帧中本地变量表的长度。异常出现时堆栈深度相应缩小(栈帧变大了容纳的栈也小了)
 
 ```java
-
+public class JavaJVMStackSOF {
+    /*VM Args: -Xss128k
+    * 设置了栈内存的容量 */
+    private int stackLength = 1;
+    public void stackLeak() {
+        stackLength++;
+        stackLeak();
+    }
+    public static void main(String[] args) throws Throwable {
+        JavaJVMStackSOF oom = new JavaJVMStackSOF();
+        try {
+            oom.stackLeak();
+        } catch (Throwable e) {
+            System.out.println("stacklenth = " + oom.stackLength);
+            throw e;
+        }
+    }
+}
 ```
 
 
