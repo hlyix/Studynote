@@ -35,8 +35,9 @@ a)局部变量表b)操作数栈c)动态链接d)方法出口
 ![1](pic/2.jpg)
 ![1](pic/3.jpg)
 
-## -outofmemory实战
+## outofmemory实战
 ### 1. 堆溢出
+
  
 # 类文件结构
 
