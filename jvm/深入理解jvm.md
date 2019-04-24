@@ -37,7 +37,26 @@ a)局部变量表b)操作数栈c)动态链接d)方法出口
 
 ## outofmemory实战
 ### 1. 堆溢出
+```java
+import java.util.ArrayList;
+import java.util.List;
+/* VM conf:-Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError*/
+//设置最小和最大值为20m，那么堆就不会自动扩展了
+public class HeapOverflow {
+    static class OOMObject {
+    }
+    public static void main(String[] args) {
+        List<OOMObject> list = new ArrayList<OOMObject>();
+        while (true) {
+            list.add(new OOMObject());
+        }
+    }
+}
+```
+输出结果
+```
 
+```
  
 # 类文件结构
 
