@@ -77,7 +77,7 @@ Process finished with exit code 1
 ### 2. 栈溢出
 Java虚拟机定义了两种栈异常
 - 如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出stackoverflowerror的异常
-- 如果虚拟机
+- 如果虚拟机在扩展栈时
 
 # 类文件结构
 
