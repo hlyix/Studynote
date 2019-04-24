@@ -104,6 +104,14 @@ public class JavaJVMStackSOF {
     }
 }
 ```
+输出结果
+```
+stacklenth = 997
+Exception in thread "main" java.lang.StackOverflowError
+	at JavaJVMStackSOF.stackLeak(JavaJVMStackSOF.java:9)
+	at JavaJVMStackSOF.stackLeak(JavaJVMStackSOF.java:10)
+	at JavaJVMStackSOF.stackLeak(JavaJVMStackSOF.java:10)
+```
 
 
 
