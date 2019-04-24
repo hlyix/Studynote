@@ -71,7 +71,7 @@ Process finished with exit code 1
 
 ```
 情况分析：
-- 内存泄漏，可以用Jprofiler查看GC Roots的相关联
- 
+- 内存泄漏，可以用Jprofiler查看GC Roots的相关联，是如何与GCroot相连，导致无法回收
+- 如不存在泄漏，检查堆参数-Xms -Xmx
 # 类文件结构
 
