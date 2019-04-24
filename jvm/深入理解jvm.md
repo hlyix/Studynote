@@ -75,7 +75,7 @@ Process finished with exit code 1
 - 如不存在泄漏，检查堆参数-Xms -Xmx,是否可以调大
 
 ### 2. 栈溢出
-
+Java虚拟机定义了两种
 
 # 类文件结构
 
