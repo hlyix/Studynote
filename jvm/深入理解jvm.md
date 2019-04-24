@@ -71,7 +71,7 @@ Process finished with exit code 1
 
 ```
 情况分析：
-- 内存泄漏，可以用Jprofiler查看GC
+- 内存泄漏，可以用Jprofiler查看GC Root
  
 # 类文件结构
 
