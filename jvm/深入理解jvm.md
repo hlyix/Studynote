@@ -81,7 +81,8 @@ Java虚拟机定义了两种栈异常
 
 单线程测试基本上都是stackoverflowerror异常（下面代码）
 栈溢出测试的两种方法：
-- 使用-Xss参数减少栈内存的容量。结果：抛出StackOverflow
+- 使用-Xss参数减少栈内存的容量。结果：抛出StackOverflow异常，异常出现时堆栈深度相应缩小
+- 
 
 
 # 类文件结构
