@@ -79,5 +79,8 @@ Java虚拟机定义了两种栈异常
 - 如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出stackoverflowerror的异常
 - 如果虚拟机在扩展栈时，无法分配到足够的内存空间，则会抛出outofmemoryerror的异常
 
+单线程测试基本上都是stackoverflowerror异常（下面代码）
+
+
 # 类文件结构
 
