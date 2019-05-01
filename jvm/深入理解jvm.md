@@ -113,6 +113,7 @@ Exception in thread "main" java.lang.StackOverflowError
 	at JavaJVMStackSOF.stackLeak(JavaJVMStackSOF.java:10)
 ```
 
+3. 关于常量池String的intern()函数
 
 
 # 类文件结构
