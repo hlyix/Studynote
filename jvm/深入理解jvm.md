@@ -128,10 +128,12 @@ public class RuntimeConstantPoolOOM {
 
 }
 ```
-其中intern的实例常量池中没有，在1.6版本以前都是从堆复制到常量池，1.7之后都是复制堆的引用到常量池
+其中intern的实例常量池中没有，在1.6版本以前都是从堆复制到常量池，1.7之后都是复制堆的引用到常量池(详见https://www.runoob.com/java/java-string-intern.html)
 所以1.7的输出结果
 ```
-``
+true
+false
+```
 
 # 类文件结构
 
