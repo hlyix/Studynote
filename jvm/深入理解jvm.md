@@ -134,7 +134,8 @@ public class RuntimeConstantPoolOOM {
 true
 false
 ```
-# 垃圾回收器
-## 判断程序是否可回收
+# 二、垃圾回收器
+## 1. 判断程序是否可回收
+
 # 类文件结构
 
