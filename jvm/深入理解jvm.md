@@ -128,7 +128,7 @@ public class RuntimeConstantPoolOOM {
 
 }
 ```
-其中intern
+其中intern的实例在1.6版本以前都是
 
 # 类文件结构
 
