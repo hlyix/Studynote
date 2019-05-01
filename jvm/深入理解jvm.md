@@ -113,8 +113,22 @@ Exception in thread "main" java.lang.StackOverflowError
 	at JavaJVMStackSOF.stackLeak(JavaJVMStackSOF.java:10)
 ```
 
-3. 关于常量池String的intern()函数
+### 3. 关于常量池String的intern()函数
+实例代码
+```java
+public class RuntimeConstantPoolOOM {
 
+    public static void main(String[] args){
+        String  str1 = new StringBuilder("计算机").append("软件").toString();
+        System.out.println(str1.intern() == str1);
+
+        String str2 = new StringBuilder("ja").append("va").toString();
+        System.out.println(str2.intern() == str2);
+    }
+
+}
+
+```
 
 # 类文件结构
 
