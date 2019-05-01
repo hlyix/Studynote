@@ -127,8 +127,8 @@ public class RuntimeConstantPoolOOM {
     }
 
 }
-
 ```
+其中intern
 
 # 类文件结构
 
