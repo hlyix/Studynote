@@ -180,6 +180,8 @@ Object obj = new Object();
 
 使用 SoftReference 类来创建软引用。
 
+这一点可以很好地用来解决OOM的问题，并且这个特性很适合用来实现缓存：比如网页缓存、图片缓存等。
+
 ```java
 Object obj = new Object();
 SoftReference<Object> sf = new SoftReference<Object>(obj);
