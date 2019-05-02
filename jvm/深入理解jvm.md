@@ -171,8 +171,8 @@ public class ReferenceCountingGC {
 
 使用 new 一个新对象的方式来创建强引用。
 
-```Object obj = new Object();
-
+```java
+Object obj = new Object();
 ```
 
 #### 2. 软引用（Soft Reference）
@@ -180,9 +180,12 @@ public class ReferenceCountingGC {
 
 使用 SoftReference 类来创建软引用。
 
+```
 Object obj = new Object();
 SoftReference<Object> sf = new SoftReference<Object>(obj);
 obj = null;  // 使对象只被软引用关联
+```
+
 #### 3. 弱引用（Weak Reference）
 被弱引用关联的对象一定会被回收，也就是说它只能存活到下一次垃圾回收发生之前。
 
