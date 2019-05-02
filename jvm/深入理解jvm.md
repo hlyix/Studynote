@@ -158,7 +158,11 @@ public class ReferenceCountingGC {
 
 ### 2) 可达性分析算法
 **描述**：通过 GC Roots 作为起始点进行搜索，能够到达到的对象都是存活的，不可达的对象可被回收。
-****
+**可作为GC-Roots的对象：**
+- 虚拟机栈（栈帧中的本地变量表）中引用的对象。
+- 方法区中静态属性引用的对象。
+- 方法区中常量引用的对象。
+- 本地方法栈中 JNI （即一般说的 Native 方法）引用的对象
 ![roottracing.png](pic/root-tracing.png)
 # 类文件结构
 
