@@ -164,5 +164,10 @@ public class ReferenceCountingGC {
 - 方法区中常量引用的对象。
 - 本地方法栈中 JNI （即一般说的 Native 方法）引用的对象
 ![roottracing.png](pic/root-tracing.png)
+
+### 2) 可达性分析算法
+
+
+
 # 类文件结构
 
