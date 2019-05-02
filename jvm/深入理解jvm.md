@@ -180,7 +180,7 @@ Object obj = new Object();
 
 使用 SoftReference 类来创建软引用。
 
-```
+```java
 Object obj = new Object();
 SoftReference<Object> sf = new SoftReference<Object>(obj);
 obj = null;  // 使对象只被软引用关联
@@ -191,9 +191,12 @@ obj = null;  // 使对象只被软引用关联
 
 使用 WeakReference 类来实现弱引用。
 
+```java
 Object obj = new Object();
 WeakReference<Object> wf = new WeakReference<Object>(obj);
 obj = null;
+```
+
 #### 4. 虚引用（Phantom Reference）
 又称为幽灵引用或者幻影引用。一个对象是否有虚引用的存在，完全不会对其生存时间构成影响，也无法通过虚引用取得一个对象。
 
