@@ -156,6 +156,8 @@ public class ReferenceCountingGC {
 }
 ```
 
+### 2) 可达性分析算法
+
 
 # 类文件结构
 
