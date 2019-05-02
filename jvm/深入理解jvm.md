@@ -142,7 +142,18 @@ false
 
 **缺陷**：很难解决对象间相互循环引用的问题。
 ```java
-
+public class ReferenceCountingGC {
+    public Object instance = null;
+    private static final int _1MB = 1024*1024;
+    private byte[] bigSize = new byte[2*_1MB];
+    public static void testGC(){
+        ReferenceCountingGC objA = new ReferenceCountingGC();
+        ReferenceCountingGC objB = new ReferenceCountingGC();
+        objA = null;
+        objB = null;
+        System.gc();
+    }
+}
 ```
 
 
