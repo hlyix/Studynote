@@ -157,6 +157,7 @@ public class ReferenceCountingGC {
 ```
 
 ### 2) 可达性分析算法
-**描述**
+**描述**：通过 GC Roots 作为起始点进行搜索，能够到达到的对象都是存活的，不可达的对象可被回收。
+![roottracing.png](pic/root-tracing.png)
 # 类文件结构
 
