@@ -203,10 +203,11 @@ obj = null;
 为一个对象设置虚引用关联的唯一目的就是能在这个对象被回收时收到一个系统通知。
 
 使用 PhantomReference 来实现虚引用。
-
+```java
 Object obj = new Object();
 PhantomReference<Object> pf = new PhantomReference<Object>(obj);
 obj = null;
+```
 
 
 
