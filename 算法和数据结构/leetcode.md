@@ -14,3 +14,8 @@ Note:
 - Both num1 and num2 contain only digits 0-9.
 - Both num1 and num2 do not contain any leading zero, except the number 0 itself.
 - You must not use any built-in BigInteger library or convert the inputs to integer directly.
+
+暴力思路：
+1、先解决加法
+2、
+
