@@ -22,5 +22,6 @@ Note:
 
 好的思路：
 利用乘数与结果对应位置的关系
+[详细解法](https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation)
 
 
