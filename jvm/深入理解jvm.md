@@ -232,7 +232,8 @@ Java虚拟机规范中确实说过可以不要求虚拟机在方法区实现垃�
 
 在大量使用反射、动态代理、GGLib 等 ByteCode 框架、动态生成 Jsp 以及 OSGI 这类频繁自定义 ClassLoader 的场景都需要虚拟机具备类卸载的功能，以保证永久代不会溢出。
 
-# 
+### 5) 垃圾回收算法
+[详解地址](https://github.com/frank-lam/fullstack-tutorial/blob/master/notes/JavaArchitecture/05-Java%E8%99%9A%E6%8B%9F%E6%9C%BA.md#3-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95%E5%9E%83%E5%9C%BE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
 
 # 类文件结构
 
