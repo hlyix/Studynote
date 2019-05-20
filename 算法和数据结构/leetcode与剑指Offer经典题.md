@@ -4,6 +4,7 @@
 - [正则表达式](#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
   - [leetcode28题](#leetcode28%E9%A2%98)
   - [leetcode 44题](#leetcode-44%E9%A2%98)
+- [枚举类题型总结](#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93)
 
 # 实现加减乘除
 ## leetcode43乘法运算 
@@ -53,3 +54,6 @@
 ![图解1](pic/regular_match1.png)
 ![图解2](pic/regular_match2.png)
 
+
+# 枚举类题型总结
+[leetcode讨论区](https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning))
