@@ -1,2 +1,0 @@
-lsof -i 查看端口地址
-ifconf 查看ip地址
