@@ -11,4 +11,4 @@ request.getLocalAddr(): 服务器的IP地址
 request.getLocalName(): 服务器的主机名
 request.getMethod(): 得到客户机请求方式一般是GET或者POST
 ```
-**Request对象的常用方法：**
+**Request对象获取request的参数：**
