@@ -18,7 +18,7 @@ request.getParameterValues(): 用于获取具有多值的参数，
 比如注册时候提交的 "hobits"，可以是多选的。获取的key-String[] = hobits-[[dota],[lol]] 
 request.getParameterMap(): 用于遍历所有的参数，并返回Map类型。
 比如有三个input窗口，一个name为n值为n1，第二个和第三个name为hobits，且值为h1,h2
-返回 key - string[] = [key:n1;vlu]
+返回 key - string[] = [{key:n1;values:n1}{key:hobits;values:[h1,h2]}];
 ```
 
 **Request在servlet中进行服务界面跳转的方式**
