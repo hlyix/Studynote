@@ -31,3 +31,7 @@ response.sendRedirect("PageName.html");
 ```
 
 ## HttpServletResponse 的方法
+
+用 ```PrintWriter pw = response```直接在响应中写入html的内容
+```
+```
