@@ -32,6 +32,9 @@ response.sendRedirect("PageName.html");
 
 ## HttpServletResponse 的方法
 
-用 ```PrintWriter pw = response```直接在响应中写入html的内容
+用 ```PrintWriter pw = response.getWriter();```直接在响应中写入html的内容
 ```
+	response.setContentType("text/html");
+	PrintWriter pw= response.getWriter();
+        pw.println("<h1>Hello Servlet</h1>");
 ```
