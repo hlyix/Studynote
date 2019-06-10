@@ -17,3 +17,8 @@ request.getParameter(): 是常见的方法，用于获取单值的参数
 request.getParameterValues(): 用于获取具有多值的参数，比如注册时候提交的 "hobits"，可以是多选的。
 request.getParameterMap(): 用于遍历所有的参数，并返回Map类型。
 ```
+
+**Request在servlet中进行服务界面跳转的方式**
+```
+request.get
+```
