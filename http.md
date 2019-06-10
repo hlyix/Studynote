@@ -48,4 +48,7 @@ response.sendRedirect("PageName.html");
 response.setStatus(301);
 response.setHeader("Location", "fail.html");
 ```
+## idea 创建的Servlet项目方法
+1. 下载servlet的api
+2. 
 
