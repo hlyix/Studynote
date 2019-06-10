@@ -20,5 +20,5 @@ request.getParameterMap(): 用于遍历所有的参数，并返回Map类型。
 
 **Request在servlet中进行服务界面跳转的方式**
 ```
-request.get
+request.getRequestDispatcher("PageName.html").forward(request, response);
 ```
