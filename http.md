@@ -40,3 +40,8 @@ response.sendRedirect("PageName.html");
 	PrintWriter pw= response.getWriter();
         pw.println("<h1>Hello Servlet</h1>");
 ```
+
+客户端有两种跳转
+302 表示临时跳转```response.sendRedirect("fail.html");```
+301 表示永久性跳转
+
