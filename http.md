@@ -55,5 +55,5 @@ response.setHeader("Location", "fail.html");
 4. 记住tomcat加载类文件是在web/WEB-INF/classes文件中，如果idea没输出在这就会爆出classNotFound exception
 5. idea要用.iml文件配置class文件输出的位置，当然也可以再project struct中设置，不过最好不用要project struct它会自动加production/out的目录在输出的类文件前
 6. 将普通java项目切换成web项目，在idea中project struct的facet选项中修改
-7. 如果不再本地手动启动tomcat而是在idea中自动部署tomcat，那么一定要配置好tomcat
+7. 如果不再本地手动启动tomcat而是在idea中自动部署tomcat，那么一定要在idea配置好tomcat的位置为你已经配好的tomcat目录
 
