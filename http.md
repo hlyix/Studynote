@@ -29,3 +29,5 @@ request.getRequestDispatcher("PageName.html").forward(request, response);
 ```
 response.sendRedirect("PageName.html");
 ```
+
+## HttpServletResponse 的方法
