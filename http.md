@@ -50,5 +50,5 @@ response.setHeader("Location", "fail.html");
 ```
 ## idea 创建的Servlet项目方法
 1. 下载servlet的api
-2. 
+2. 下载tomcat并配置端口，和serve.xml的context的路径，保证能加载到web.xml中各种action的映射
 
