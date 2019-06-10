@@ -34,7 +34,9 @@ response.sendRedirect("PageName.html");
 
 用 ```PrintWriter pw = response.getWriter();```直接在响应中写入html的内容
 ```
-	response.setContentType("text/html");
+	response.setContentType("text/html");//设置响应格式
+	//response.setContentType("text/html; charset=UTF-8");
+	// response.setCharacterEncoding("UTF-8");
 	PrintWriter pw= response.getWriter();
         pw.println("<h1>Hello Servlet</h1>");
 ```
