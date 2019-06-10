@@ -51,5 +51,6 @@ response.setHeader("Location", "fail.html");
 ## idea 创建的Servlet项目方法
 1. 下载servlet的api
 2. 下载tomcat并配置端口，和serve.xml的context的路径，保证能加载到web.xml中各种action的映射(web.xml中的映射对应各个action比如/hello, /success而/login.html这种表示是在根目录下，直接访问就行了)
-3. 写前端界面post，get的action，然后再后端用requset response
+3. 写前端界面post，get的action，然后再后端用requset response响应请求
+4. idea要用.iml文件配置class文件输出的位置，当然也可以再project struct中设置，不过最好不用要project struct它会自动加
 
