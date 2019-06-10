@@ -14,8 +14,10 @@ request.getMethod(): 得到客户机请求方式一般是GET或者POST
 **Request对象获取request的参数：**
 ```
 request.getParameter(): 是常见的方法，用于获取单值的参数,对应html的input的value
-request.getParameterValues(): 用于获取具有多值的参数，比如注册时候提交的 "hobits"，可以是多选的。获取的key-String = 
+request.getParameterValues(): 用于获取具有多值的参数，
+比如注册时候提交的 "hobits"，可以是多选的。获取的key-String[] = hobits-[[dota],[lol]] 
 request.getParameterMap(): 用于遍历所有的参数，并返回Map类型。
+比如有三个input窗口，一个value为
 ```
 
 **Request在servlet中进行服务界面跳转的方式**
