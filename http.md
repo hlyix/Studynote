@@ -44,4 +44,8 @@ response.sendRedirect("PageName.html");
 客户端有两种跳转
 302 表示临时跳转```response.sendRedirect("fail.html");```
 301 表示永久性跳转
+```
+response.setStatus(301);
+response.setHeader("Location", "fail.html");
+```
 
