@@ -5,3 +5,4 @@
 
 linux的文件就是一个m字节的序列
 
+linux shell
