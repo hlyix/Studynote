@@ -15,6 +15,9 @@ windows: 是 /r/n
 
 c语言中open close read write函数来操作文件（详细见TCP/ip编程）
 
+概述：
+进程：本质上是一个正在执行的一个
+
 
 
 
