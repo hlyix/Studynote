@@ -11,4 +11,6 @@ linux shell创建的每个进程开始都有三个打开的文件：标准输入
 
 windows和linux的操作系统对于文本的换行符不一样：
 linux和mac：是/n
-windows
+windows: 是 /r/n
+
+c
