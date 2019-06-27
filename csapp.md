@@ -15,3 +15,6 @@ windows: 是 /r/n
 
 c语言中open close read write函数来操作文件（详细见TCP/ip编程）
 
+
+
+
