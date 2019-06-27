@@ -13,4 +13,5 @@ windows和linux的操作系统对于文本的换行符不一样：
 linux和mac：是/n
 windows: 是 /r/n
 
-c
+c语言中open close read write函数来操作文件（详细见TCP/ip编程）
+
