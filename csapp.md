@@ -26,6 +26,7 @@ c语言中open close read write函数来操作文件（详细见TCP/ip编程）
 
 每个进程都有个UID
 
+Shell：操作系统进行系统调用的代码。
 
 
 
