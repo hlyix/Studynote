@@ -34,7 +34,7 @@ Shell：操作系统进行系统调用的代码。编辑器、编译器、汇编
 常见的系统调用函数有以下：
 ![trap](pic/trap.jpg)
 
-在unitx
+在unix中只有fork
 
 
 
