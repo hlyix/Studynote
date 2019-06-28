@@ -64,6 +64,8 @@ windows和unix不一样，unix系统调用和系统调用所使用的库之间�
 3. 阻塞态（除非某种外部事件发生，否则进程不能运行，例如read等待tcp传输信息）
 ![pcondition](pic/pcondition.jpg)
 
+jin
+
 
 
 
