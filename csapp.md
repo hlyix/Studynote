@@ -133,6 +133,92 @@ void consumer(void){
 
 用java代码还原了丢失问题：
 ```java
+import java.util.ArrayList;
+public class testMultiThread {
+    public static int N = 5;//仓库容量
+    public static int count = 0;//仓库物品计数器
+    public static Object producer = new Object();//用于wait notify
+    public static Object consumer = new Object();
+    public static ArrayList<Integer> list = new ArrayList<>();//此模型作为生产消费的仓库
+
+    public void producer() throws InterruptedException {
+        int item;
+        for (int i = 0; i < 5; i++) {//当循环次数变大时，出错的机率就会变得很大
+            item = 1;
+            if (count == N) {
+                synchronized (producer) {
+                    producer.wait();
+                }
+            }
+            count = count + 1;
+            System.out.println("method producer count is: "+count );//打印count的日志
+            list.add(item);
+            if (count == 1) {
+                synchronized (consumer) {
+                    consumer.notify();
+                }
+            }
+        }
+    }
+
+    public void consumer() throws InterruptedException {
+        for (int i = 0; i < 3; i++) {//当循环次数变大时，出错的机率就会变得很大
+            if (count == 0) {
+                synchronized (consumer) {
+                    consumer.wait();
+                }
+            }
+            count = count - 1;
+            System.out.println("method consumer count is: "+count );//打印count的日志
+            if (count == N - 1) {
+                synchronized (producer) {
+                    producer.notify();
+                }
+            }
+
+                list.remove(list.size() - 1);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        //运行消费者线程
+        Thread t2 = new Thread(()->{
+            try {
+                new testMultiThread().consumer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        t2.start();
+        //运行生产者线程
+        Thread t1 = new Thread(()->{
+            try {
+                new testMultiThread().producer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        t1.start();
+
+        //记录结果线程
+        Thread t3 = new Thread(() ->{
+            System.out.println("*********************");
+            System.out.println("count is : " + count);
+            System.out.println("ArraList is  : " + list.toString());
+            System.out.println("*********************");
+        });
+        while (true) {
+            //直到t1和t2完成后，才输出count和ArrayList的最终结果
+            if (!t1.isAlive() && !t2.isAlive()) {
+                t3.start();
+                break;
+            }
+        }
+
+    }
+}
+
 ```
 
 
