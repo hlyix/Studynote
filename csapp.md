@@ -122,9 +122,10 @@ void consumer(void){
 		int item;
 	while(TRUE){
 		if(count == 0) sleep();
-		insert_item(item);
-		count = count + 1;
-		if(count == 1) wakeup(consumer);
+		item = remove_item();
+		count = count - 1;
+		if(count == N-1) wakeup(producer);
+	
 	}
 }
 ```
