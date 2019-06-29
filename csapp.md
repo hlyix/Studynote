@@ -110,7 +110,7 @@ QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 H
 - 至于为什么要在insert_item前加down(&mutex)，是因为要保证insert_item操作的隔离性
 - down(&empty)表示可以有多个生产者进程同时生产（注意down的实现过程中就是读取修改时，也就是减一的过程完成前，其他进程无法访问empty）
 - down(&empty)一定要放再down(&mutex)前面，如果放在了后面，如果mutex为1（进入临界区后变成0），empty为0，则生产者睡眠。由于mutex是0，消费者就始终无法进行消费操作！死锁！
-- 正确做法，down(&empty)再down(&mutex)前面。这样如果empty为0，则mutex进入临界区
+- 正确做法，down(&empty)再down(&mutex)前面。这样如果empty为0，生产者睡眠，而则生产者不能mutex进入临界区。这样就不会阻塞消费者的mutex临界区啦
 
 ```c
 #define N 100
