@@ -103,7 +103,7 @@ QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 H
 
 生产者和消费者的问题：
 适用于一个生产者和一个消费者的解法，不适合多个
-这个方法还存在一个问题，count的加减不是隔离的操作，那么
+这个方法还存在一个问题，count的加减不是隔离的操作，那么会出现修改丢失的情况。
 ```c
 #define N  100   //缓冲区的
 int count = 0;
@@ -113,9 +113,9 @@ void produce(void){
 	while(TRUE){
 		item = produce_item();//放在最前的原因，先生产一个放在这，如果能加进去就加，加不进去就放着阻塞，等能加进去为止
 		if(count == N) sleep();//如果仓库是满的，阻塞
-		insert_item(item);
+		insert_item(item);//增加项目
 		count = count + 1;
-		if(count == 1) wakeup(consumer);
+		if(count == 1) wakeup(consumer);//如果count = 1，呢么
 	}
 }
 
