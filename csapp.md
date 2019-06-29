@@ -105,7 +105,13 @@ QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 H
 适用于一个生产者和一个消费者的解法，不适合多个
 ```c
 #define N  100   //缓冲区的
-int count
+int count = 0;
+
+void produce(void){
+	int item;
+	while(TRUE){
+	}
+}
 ```
 
 
