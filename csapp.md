@@ -111,7 +111,7 @@ void produce(void){
 	int item;
 	while(TRUE){
 		item = produce_item();//放在最前的原因，先生产一个放在这，如果能加进去就加，加不进去就放着阻塞，等能加进去为止
-		if(count == N) sleep();//如果
+		if(count == N) sleep();//如果仓库是满的，阻塞
 		insert_item(item);
 		count = count + 1;
 		if(count == 1) wakeup(consumer);
