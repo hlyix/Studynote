@@ -131,7 +131,9 @@ void consumer(void){
 }
 ```
 
-用java
+用java代码还原了丢失问题：
+```java
+```
 
 
 
