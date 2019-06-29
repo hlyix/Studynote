@@ -104,6 +104,39 @@ QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 H
 
 信号量：down为减一，up为加一，再信号量操作完成之前（加一减一的过程），其余进程不得访问信号量
 
-用信号量解决生产者
+用信号量解决生产者——消费者问题
+解释一下：
+```c
+#define N 100
+typedef int semaphore;
+semaphore mutex = 1;
+semaphore empty = N;
+semaphore full = 0;
+
+void producer() {
+    while(TRUE){
+        int item = produce_item(); // 生产一个产品
+        // down(&empty) 和 down(&mutex) 不能交换位置，否则造成死锁
+        down(&empty); // 记录空缓冲区的数量，这里减少一个产品空间
+        down(&mutex); // 互斥锁
+        insert_item(item);
+        up(&mutex); // 互斥锁
+        up(&full); // 记录满缓冲区的数量，这里增加一个产品
+    }
+}
+
+void consumer() {
+    while(TRUE){
+        down(&full); // 记录满缓冲区的数量，减少一个产品
+        down(&mutex); // 互斥锁
+        int item = remove_item();
+        up(&mutex); // 互斥锁
+        up(&empty); // 记录空缓冲区的数量，这里增加一个产品空间
+        consume_item(item);
+    }
+}
+
+```
+
 
 
