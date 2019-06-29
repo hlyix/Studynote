@@ -125,7 +125,7 @@ void consumer(void){
 		item = remove_item();
 		count = count - 1;
 		if(count == N-1) wakeup(producer);
-	
+		consume_item(item);//放在最后的原因，先看能否取出，如能取出则消费，如不能，则到不了这一步
 	}
 }
 ```
