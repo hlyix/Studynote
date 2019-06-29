@@ -112,8 +112,14 @@ void produce(void){
 	while(TRUE){
 		item = produce_item();
 		if(count == N) sleep();
-		insert_item
+		insert_item(item);
+		count = count + 1;
+		if(count == 1) wakeup(consumer);
 	}
+}
+
+void consumer(void){
+	
 }
 ```
 
