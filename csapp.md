@@ -115,7 +115,7 @@ void produce(void){
 		if(count == N) sleep();//如果仓库是满的，阻塞
 		insert_item(item);//增加项目
 		count = count + 1;
-		if(count == 1) wakeup(consumer);//如果count = 1，呢么
+		if(count == 1) wakeup(consumer);//如果count = 1，那么之前它肯定等于0，所以消费者肯定再等待，所以唤醒消费者。
 	}
 }
 
