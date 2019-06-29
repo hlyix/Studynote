@@ -109,7 +109,7 @@ QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 H
 - empty为0，表示库存是满的（可以这么记忆 !empty(),不为空），生产者不能再生产，大于0表示库存有空间可以继续生产（empty()==true）,生产完毕后库存empty--，full++（full为0时表示仓库是空的，为N的时候表示仓库是满的）
 - 至于为什么要在insert_item前加down(&mutex)，是因为要保证insert_item操作的隔离性
 - down(&empty)表示可以有多个生产者进程同时生产（注意down的实现过程中就是读取修改时，也就是减一的过程完成前，其他进程无法访问empty）
-- down(&empty)一定要放再down(&mutex)前面，
+- down(&empty)一定要放再down(&mutex)前面，如果放在了后面
 
 ```c
 #define N 100
