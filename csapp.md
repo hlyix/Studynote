@@ -110,6 +110,9 @@ int count = 0;
 void produce(void){
 	int item;
 	while(TRUE){
+		item = produce_item();
+		if(count == N) sleep();
+		insert_item
 	}
 }
 ```
