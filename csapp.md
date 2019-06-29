@@ -119,7 +119,13 @@ void produce(void){
 }
 
 void consumer(void){
-	
+		int item;
+	while(TRUE){
+		if(count == 0) sleep();
+		insert_item(item);
+		count = count + 1;
+		if(count == 1) wakeup(consumer);
+	}
 }
 ```
 
