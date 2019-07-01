@@ -1,7 +1,8 @@
 ## Spring的核心
 
 - Spring的核心是IOC（控制反转）和面向切面(AOP)
-
+  - 核心容器 ： beans、core、context、SpEL
+  
 
 Spring的优点
 - 方便解耦，简化开发（高内聚低耦合）
