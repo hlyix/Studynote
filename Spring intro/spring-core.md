@@ -5,7 +5,7 @@
 
   ![springframwork](pic/spring.png)
 
-再创建Spring
+再创建Spring项目时记得导入4个核心一个依赖
 
 Spring的优点
 - 方便解耦，简化开发（高内聚低耦合）
