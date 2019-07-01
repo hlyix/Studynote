@@ -266,7 +266,69 @@ void consumer() {
 
 ```
 java实现
-```
+```java
+import java.util.ArrayList;
+import java.util.concurrent.Semaphore;
+
+public class testmultiThread1 {
+    public static int N = 20;
+    public static Semaphore mutex =new Semaphore(1);
+    public static Semaphore remainSpace = new Semaphore(N);
+    public static Semaphore currentProducts = new Semaphore(0);
+    public static  ArrayList<Integer>  store = new ArrayList<>();
+
+    public void producer() throws InterruptedException {
+        int item = 1;
+
+        for(int i = 0 ;i<50;i++){
+            remainSpace.acquire();// 剩余空间-1
+            mutex.acquire();
+            store.add(item);
+            System.out.println("producer is producing");
+            mutex.release();
+            currentProducts.release();//现有产品数量+1
+        }
+
+    }
+
+    public void consumer() throws InterruptedException{
+        int item = 1;
+
+        for(int i = 0 ;i<50;i++){
+            currentProducts.acquire();//现有产品-1
+            mutex.acquire();
+            store.remove(store.size()-1);
+            System.out.println("consumer is consuming");
+            mutex.release();
+            remainSpace.release();//剩余空间+1
+        }
+    }
+
+    public static void main(String[] args){
+        Thread t1 = new Thread(()->{
+            try {
+                new testmultiThread1().producer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread t2 = new Thread(()->{
+            try {
+                new testmultiThread1().consumer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        while(t1.isAlive()||t1.isAlive());
+        System.out.println("Over");
+        System.out.print(testmultiThread1.store);
+    }
+
+}
 
 ```
 
