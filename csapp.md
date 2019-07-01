@@ -432,9 +432,80 @@ public class moniterThread {
 
 Readercount：读操作的进程数量（Rcount=0）
 
-ReaderMutex：对于Readercount进行加锁（CountMutex=1），让这个值的加减具有
+ReaderMutex：对于Readercount进行加锁（CountMutex=1），让这个值的加减具有隔离性
 
 WriteMutex：互斥量对于写操作的加锁（WriteMutex=1）
+
+```java
+import java.util.concurrent.Semaphore;
+
+public class ReadAndWriteConcurrent {
+    public static int  writerOutput =0;
+    public static int ReaderCount = 0;
+    public static Semaphore ReadMutex = new Semaphore(1);
+    public static Semaphore WriteMutex = new Semaphore(1);
+
+    public   writer w = new writer();
+    public   reader r = new reader();
+
+
+    public static void main(String[] args){
+        ReadAndWriteConcurrent test1 = new ReadAndWriteConcurrent();
+        ReadAndWriteConcurrent test2 = new ReadAndWriteConcurrent();
+        //测试两个写操作同时写
+        /*test1.w.start();
+        test2.w.start();*/
+
+        //测试两个读操作
+        test1.r.start();
+        test1.w.start();
+        test2.r.start();
+
+    }
+
+     class writer extends Thread {
+        public void run() {
+            for (int i = 0; i < 2; i++) {
+                try {
+                    WriteMutex.acquire();
+                    System.out.println(++writerOutput);
+                    WriteMutex.release();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+     class reader extends Thread{
+        public void run(){
+            for(int i = 0; i<2; i++){
+                try {
+                    ReadMutex.acquire();//使用读者读取数据时，先确认写操作停了没有
+                    if(ReaderCount == 0) //读者为0时，那么可能在写操作，读者不为0时，那么肯定没有进行写操作！
+                        WriteMutex.acquire();//在写操作就会阻塞。不会让你读,阻塞在此。当写完成后获取写锁，读的时候不让写！
+                    ReaderCount++;//没在读就增加一个读者进行读操作。
+                    ReadMutex.release();//确认读操作完毕，已增加读者，释放读锁。
+                    //DO READ
+                    System.out.println("now read res is =" + writerOutput);
+
+                    ReadMutex.acquire();//读完成后获取读锁，让ReaderCount减一隔离操作，不被其他读者影响
+                    ReaderCount--;//读完了对读者减一
+                    if(ReaderCount == 0)
+                        WriteMutex.release();//读完成后，如果没有读者了，那么就释放写锁，允许写了。
+                    ReadMutex.release();//读者减一完毕后(如果读者为0释放写锁后),最后释放读锁
+
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+}
+
+```
 
 
 
