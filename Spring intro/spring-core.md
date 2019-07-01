@@ -1,6 +1,6 @@
 ## Spring的核心
 
-- Spring的核心时IOC（控制反转）和面向切面(AOP)
+- Spring的核心是IOC（控制反转）和面向切面(AOP)
 
 
 Spring的优点
