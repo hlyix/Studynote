@@ -427,7 +427,14 @@ public class moniterThread {
 
 
 
+1. 读者-写者问题
+允许多个进程同时对数据进行读操作，但是不允许读和写以及写和写操作同时发生。读者优先策略
 
+Readercount：读操作的进程数量（Rcount=0）
+
+ReaderMutex：对于Readercount进行加锁（CountMutex=1），让这个值的加减具有
+
+WriteMutex：互斥量对于写操作的加锁（WriteMutex=1）
 
 
 
