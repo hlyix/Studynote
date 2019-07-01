@@ -333,5 +333,86 @@ public class testmultiThread1 {
 
 ```
 
+java实现管程
+
+```java
+import java.util.ArrayList;
+
+public class moniterThread {
+    //缓存大小
+    static final int N = 1024;
+    //创建管程
+    static our_moniter mon = new our_moniter();
+    static producer p = new producer();
+    static consumer c = new consumer();
+    public static void main(String[] args){
+        long start =  System.currentTimeMillis();
+        p.start();
+        c.start();
+
+        while(p.isAlive()||c.isAlive());
+        long end = System.currentTimeMillis();
+        System.out.println("total run time is:" + (end-start));
+    }
+
+    //生产者线程
+    static class producer extends Thread {
+        public void run(){
+            for(int i = 0;i<10000;i++){
+                try {
+                    mon.insert(i);//调用管城
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    //消费者线程
+    static class consumer extends Thread{
+        public void run(){
+            ArrayList<Integer> res = new ArrayList<>();
+            for(int i = 0 ;i<10000;i++){
+                int r = 0;
+                try {
+                    r = mon.remove();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                res.add(r);
+            }
+            System.out.println(res.toString());
+        }
+    }
+    //管程
+    static class our_moniter{
+
+        //缓存大小
+        private int buffer[] = new int[N];
+        private int count = 0,left=0,right=0;
+        //添加
+        public synchronized void insert(int item) throws InterruptedException {
+            if(count == N) wait();
+            buffer[right] = item;
+            right = (right+1)%N;
+            System.out.println("is adding a product");
+            count++;
+            if(count == 1) notify();
+        }
+        //删除
+        public synchronized  int  remove() throws InterruptedException {
+            if(count == 0) wait();
+            int item = buffer[left];
+            left = (left+1)%N;
+            System.out.println("is removing a product");
+            count--;
+            if(count == N-1) notify();
+            return item;
+        }
+    }
+}
+
+```
+
 
 
