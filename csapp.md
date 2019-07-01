@@ -332,6 +332,9 @@ public class testmultiThread1 {
 }
 
 ```
+## 管程
+
+**管程**:
 
 java实现管程
 
