@@ -15,4 +15,6 @@ Spring的优点
   - spring对junit4支持，可以通过注解方便的测试Spring程序
 
 - 方便集成各种优秀的跨国家
-  -   
+  - 对各种优秀框架（如：struct、Hibernate、MyBatis、Quartz等）的直接支持
+ 
+- 降低JavaEE API的使用难度  
