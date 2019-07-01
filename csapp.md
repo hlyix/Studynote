@@ -265,6 +265,10 @@ void consumer() {
 }
 
 ```
+java实现
+```
+
+```
 
 
 
