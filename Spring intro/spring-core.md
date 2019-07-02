@@ -137,3 +137,4 @@ public class UserService {
 ![classInhe](pic/classInhe.png)
 
 ### BeanFactory
+是一个工厂，用于生成
