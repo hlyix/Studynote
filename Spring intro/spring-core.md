@@ -151,3 +151,6 @@ public class UserService {
 ### ClassPathXmlApplicationContext和FileSystemXmlApplicationContext
 ClassPathXMLContext：用于加载classpath下载的xml（这个见得多）
 FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径），可以通过java web ServletContext.getRealPath()获得指定盘符
+
+
+## 基于XML装配Bean
