@@ -34,3 +34,5 @@ Spring的配置文件是基于XML格式的，Spring1.0的配置文件采用DTD�
 
 spring头部配置文件详情可以见：https://blog.csdn.net/qq646040754/article/details/81531151
 
+
+## DI depencency in
