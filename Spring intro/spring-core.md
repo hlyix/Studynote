@@ -161,5 +161,8 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - 实例工厂
 
 1. 默认构造
+```<bean id = "" class ="">```必须提供的默认构造
 
+2. 静态工厂
+- 常用于与Spring证合
 
