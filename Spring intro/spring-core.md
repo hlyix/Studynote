@@ -129,6 +129,6 @@ public class UserService {
         <!--name属性值：UserService类里的属性名称-->
         <!--ref属性:UserDao类配置bean标签中的id值-->
         <property name="userDao" ref="userDao"></property>
-    </bean>12345678
+    </bean>
 ```
 
