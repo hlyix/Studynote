@@ -108,6 +108,26 @@ public class Person {
 
 ### (3) 注入对象类型属性
 
+```java
+public class UserService {
+    // 1.定义UserDao类型属性
+    private UserDao userDao;
+
+    // 2.生成set方法
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+}
 ```
+
+```
+<bean id="userDao" class="cn.wang.property.UserDao">
+        <property name="name" value="Tom"></property>
+    </bean>
+    <bean id="userService" class="cn.wang.property.UserService">
+        <!--name属性值：UserService类里的属性名称-->
+        <!--ref属性:UserDao类配置bean标签中的id值-->
+        <property name="userDao" ref="userDao"></property>
+    </bean>12345678
 ```
 
