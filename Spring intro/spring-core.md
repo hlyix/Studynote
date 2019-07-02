@@ -156,3 +156,10 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ## 基于XML装配Bean
 
 实例化Bean的方式：
+- 默认构造
+- 静态工厂
+- 实例工厂
+
+1. 默认构造
+
+
