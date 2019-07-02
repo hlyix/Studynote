@@ -88,7 +88,8 @@ public class SchoolImpl implements School {
 ```
 
 ### （2）使用有参构造注入
-```
+
+```java
 public class Person {
     private String pname;
 
@@ -97,7 +98,13 @@ public class Person {
     }
 }
 ```
+```xml
 <bean id="user" class="cn.wang.ioc.User">
         <!--构造方法注入属性-->
         <constructor-arg name="pname" value="Tony"></constructor-arg>
 </bean>
+
+```
+
+### (3)使用构造
+
