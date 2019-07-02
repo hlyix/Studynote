@@ -168,3 +168,5 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - 静态工厂：用于生成实例对象，所有的方法必须是static
 ```<bean id ="" class="工厂全限定类名" factory-method="静态方法">```
 
+3.
+
