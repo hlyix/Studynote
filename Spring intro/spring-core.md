@@ -145,7 +145,8 @@ public class UserService {
 - 是Beanfactory的子接口，功能更强大
 -  国际化处理、事件传递、Bean自动装配、各种不同应用层
 - application初始化时，就会直接生成bean实例
-![直接加载](pic/appication-context.png)
+- 
+![直接加载](pic/application-context.png)
 
 ### ClassPathXmlApplicationContext和FileSystemXmlApplicationContext
 ClassPathXMLContext：用于加载classpath下载的xml（这个见得多）
