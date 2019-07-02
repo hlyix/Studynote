@@ -121,7 +121,7 @@ public class UserService {
 }
 ```
 
-```
+```xml
 <bean id="userDao" class="cn.wang.property.UserDao">
         <property name="name" value="Tom"></property>
     </bean>
@@ -134,4 +134,4 @@ public class UserService {
 
 
 ## 核心API
-
+![classInhe](pic/classInhe.png)
