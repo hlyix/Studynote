@@ -29,3 +29,6 @@ Spring 的配置文件applicationContext.xml一般放在classpath下（idea如�
 
 内容就是schema
 
+Spring的配置文件是基于XML格式的，Spring1.0的配置文件采用DTD格式，Spring2.0以后使用Schema的格式，后者让不同类型的配置拥有了自己的命名空间，使配置文件更具有扩展性。
+
+
