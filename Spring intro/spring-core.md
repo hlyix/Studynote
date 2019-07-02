@@ -23,3 +23,7 @@ Spring的优点
  
 - 降低JavaEE API的使用难度
   - 例如对JDBC、JavaMail、远程调用等都提供了封装，使这些API应用难度大大降低。  
+
+
+Spring 的配置文件一般放在classpath下（idea如有其他的classpath可在module中添加source为classpath）
+
