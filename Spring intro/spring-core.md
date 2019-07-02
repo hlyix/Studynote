@@ -138,7 +138,7 @@ public class UserService {
 
 ### BeanFactory
 - 是一个工厂，用于生成bean
-- 采用
+- 采用延迟加载，第一次getBean时才会初始话bean。
 
 ### ApplicationContext
 是Beanfactory的子接口，功能更强大
