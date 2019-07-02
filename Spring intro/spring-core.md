@@ -60,6 +60,29 @@ DI依赖注入，向类里面属性注入值
 
 #### (1) set方法注入
 
+```
+    <bean id ="school01" class = "com.ioc.SchoolImpl">
+        <!--set方法注入属性
+    name属性值：类中定义的属性名称
+    value属性值：设置具体的值
+-->
+        <property name="location" value="HuNan University"></property>
+    </bean>
+```
+
 ```java
+public class SchoolImpl implements School {
+
+    String location;
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    @Override
+    public void Register() {
+        System.out.println("you have resgisted in "+location);
+    }
+}
 
 ```
