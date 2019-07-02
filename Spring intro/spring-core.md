@@ -27,5 +27,5 @@ Spring的优点
 ## 配置文件
 Spring 的配置文件applicationContext.xml一般放在classpath下（idea如有其他的classpath可在module中添加source为classpath）
 
-内容
+内容就是schema
 
