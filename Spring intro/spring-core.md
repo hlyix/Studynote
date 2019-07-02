@@ -165,8 +165,9 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 
 2. 静态工厂
 - 常用于与Spring整合其他框架（工具）
-- 静态工厂：用于生成实例对象，所有的方法必须是static
+- 静态工厂：用于生成实例对象，**所有的方法必须是static**
 ```<bean id ="" class="工厂全限定类名" factory-method="静态方法">```
 
-3.
+3.实例工厂
+- 必须先有工厂实例对象，通过实例对象创建
 
