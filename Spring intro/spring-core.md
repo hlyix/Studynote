@@ -173,7 +173,9 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - 必须先有工厂实例对象，通过实例对象创建对象，**提供所有的方法必须是“非静态的”**
 
 ```xml
-<bean id="myBeanFactory" class="com.package.MyBeanFactory">
+<!--创建工厂实例-->
+<bean id="myBeanFactory" class="com.package.MyBeanFactory"></bean>
+<!--创建工厂实例-->
 <bean id="UserService" facotry-bean="myBeanFactoryId" factory-method="createService">
 ```
 
