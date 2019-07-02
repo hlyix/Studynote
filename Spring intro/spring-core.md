@@ -60,11 +60,11 @@ DI依赖注入，向类里面属性注入值
 
 #### (1) set方法注入
 
-```
+```xml
     <bean id ="school01" class = "com.ioc.SchoolImpl">
         <!--set方法注入属性
-    name属性值：类中定义的属性名称
-    value属性值：设置具体的值
+    name属性值：类中定义的属性名称，这里是location
+    value属性值：设置具体的值，相当于location = "HuNan University"
 -->
         <property name="location" value="HuNan University"></property>
     </bean>
@@ -86,3 +86,18 @@ public class SchoolImpl implements School {
 }
 
 ```
+
+### （2）使用有参构造注入
+```
+public class Person {
+    private String pname;
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+}
+```
+<bean id="user" class="cn.wang.ioc.User">
+        <!--构造方法注入属性-->
+        <constructor-arg name="pname" value="Tony"></constructor-arg>
+</bean>
