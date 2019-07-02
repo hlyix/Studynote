@@ -142,4 +142,6 @@ public class UserService {
 ### ApplicationContext
 是Beanfactory的子接口，功能更强大
 
-### ClassPathXML
+### ClassPathXMLContext和FileSystemXmlApplicationContext
+ClassPathXMLContext：用于加载classpath下载的xml（这个见得多）
+File
