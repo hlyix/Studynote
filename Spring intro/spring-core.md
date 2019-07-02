@@ -137,11 +137,12 @@ public class UserService {
 ![classInhe](pic/classInhe.png)
 
 ### BeanFactory
-是一个工厂，用于生成bean
+- 是一个工厂，用于生成bean
+- 采用
 
 ### ApplicationContext
 是Beanfactory的子接口，功能更强大
 
 ### ClassPathXmlApplicationContext和FileSystemXmlApplicationContext
 ClassPathXMLContext：用于加载classpath下载的xml（这个见得多）
-FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径），可以通过java web Servelet
+FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径），可以通过java web ServletContext.getRealPath()获得指定盘符
