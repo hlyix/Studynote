@@ -137,4 +137,9 @@ public class UserService {
 ![classInhe](pic/classInhe.png)
 
 ### BeanFactory
-是一个工厂，用于生成
+是一个工厂，用于生成bean
+
+### ApplicationContext
+是Beanfactory的子接口，功能更强大
+
+### ClassPathXML
