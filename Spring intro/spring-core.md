@@ -138,13 +138,14 @@ public class UserService {
 
 ### BeanFactory
 - 是一个工厂，用于生成bean
-- 采用延迟加载，第一次getBean时才会初始话bean。([懒汉式饿汉式加载相关](https://blog.csdn.net/qq_35098526/article/details/79893628))
+- 采用延迟加载，第一次getBean时才会初始化bean实例。([懒汉式饿汉式加载相关](https://blog.csdn.net/qq_35098526/article/details/79893628))
 
 
 ### ApplicationContext
 - 是Beanfactory的子接口，功能更强大
 -  国际化处理、事件传递、Bean自动装配、各种不同应用层
-- application初始化时，就会
+- application初始化时，就会直接生成bean实例
+![直接加载](pic/appication-context.png)
 
 ### ClassPathXmlApplicationContext和FileSystemXmlApplicationContext
 ClassPathXMLContext：用于加载classpath下载的xml（这个见得多）
