@@ -135,3 +135,5 @@ public class UserService {
 
 ## 核心API
 ![classInhe](pic/classInhe.png)
+
+### BeanFactory
