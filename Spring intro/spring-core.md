@@ -211,4 +211,6 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ```
 我们直接在类中实现void init-method()方法和 destroy-method（）方法配置到bean中就好了
 
+- 销毁方法的执行，容器必须close。```applicationConte
+
 
