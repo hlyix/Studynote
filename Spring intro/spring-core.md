@@ -156,10 +156,11 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ## 基于XML装配Bean
 
 实例化Bean的方式：
-- 默认构造
-- 静态工厂
-- 实例工厂
--
+- 默认构造：就是普通的bean
+- 静态工厂：自己写个工厂，专门用静态方法生成类
+- 实例工厂：实例工厂，先new个实例工厂，再用实例工厂生成类实例
+
+详细见：https://blog.csdn.net/small__snail__5/article/details/87903578
 
 1. 默认构造
 ```<bean id = "" class ="">```必须提供的默认构造
