@@ -219,7 +219,8 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - spring提供一种机制，只要实现此接口BeanPostProcessor,并将实现类提供给spring容器，spring容器将自动执行，在初始化方法前执行before()，在初始化方法后执行after()
 - factroy hook that allows for custom modification of new bean instances,e.g. checking for marker interfaces or wrapping them with proxies.
 - spring提供工厂钩子，用于修改实例对象，可以生成代理对象，是AOP底层
-模拟过程
+- 
+模拟过程：视频学习地址 https://www.bilibili.com/video/av15369076/?p=10
 ```java
 A a = new A();
 a = B.before(a);//将a的实例对象传递给后处理bean，可以生成代理对象并返回，就是给a加几个方法，到最后a就多出了几个功能，又不用直接在类A中加方法块代码，方便修饰类
