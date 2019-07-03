@@ -210,3 +210,4 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 <bean id="" class="init-method"= "初始化方法名称" destory-method = "销毁方法名称">
 ```
 
+
