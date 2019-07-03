@@ -54,9 +54,7 @@ DI依赖注入，向类里面属性注入值
 ### 3)依赖注入方式
 
 - 使用set方法注入
-
 - 使用有参构造注入
-
 - 使用接口注入
 
 #### (1) set方法注入
@@ -88,7 +86,7 @@ public class SchoolImpl implements School {
 
 ```
 
-### （2）使用有参构造注入
+#### (2)使用有参构造注入
 
 ```java
 public class Person {
@@ -107,7 +105,7 @@ public class Person {
 
 ```
 
-### (3) 注入对象类型属性
+#### (3) 注入对象类型属性
 
 ```java
 public class UserService {
@@ -133,7 +131,7 @@ public class UserService {
 ```
 
 
-## 核心API
+## 四、核心API
 ![classInhe](pic/classInhe.png)
 
 ### BeanFactory
