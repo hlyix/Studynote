@@ -215,5 +215,6 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 
 - 销毁方法的执行，容器必须close。```applicationContext.getClass().getMethod("close").invoke(applicationContext);```此方法接口中没有定义，由实现类提供
 
-### 2)
+### 2) BeanPostProcessor后处理bean
+
 
