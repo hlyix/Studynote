@@ -182,4 +182,4 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ## 六、Bean的种类
 
 - 普通bean: 之前操作都是普通bean。<bean id = "" class="A">, spring直接创建A实例，并返回
-- FactoryBean：是一个特殊的bean，具有工厂生产对象的能力，只能生成特定的对象。bean必须实现FactoryBean接口。
+- FactoryBean：是一个特殊的bean，具有工厂生产对象的能力，只能生成特定的对象。bean必须实现FactoryBean接口，次接口提供方法getObject()用于获得
