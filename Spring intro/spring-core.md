@@ -190,3 +190,7 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
   - FactoryBean：特殊的bean，用于生成另一个特定的bean。
   - 详细见https://www.cnblogs.com/aspirant/p/9082858.html
 
+## 七、作用域
+
+用于确定spring创建bean实例的个数
+- singleton
