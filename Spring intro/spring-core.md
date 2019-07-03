@@ -198,5 +198,5 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 
 配置信息：
 ```xml
-
+ <bean id="userSingleton" class="com.scope.UserServiceImp" scope="singleton"/>
 ```
