@@ -205,5 +205,8 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ![Bean生命周期](https://img-blog.csdn.net/20160417164808359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
 ### 1） 初始化和销毁
-- 
+- 目标方法执行前和执行后，将进行初始化或销毁
+```xml
+<bean id="" class="init-method"= >
+```
 
