@@ -188,4 +188,5 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - BeanFactory和FactoryBean的对比
   - beanfactory：生产任意的Bean
   - FactoryBean：特殊的bean，用于生成另一个特定的bean。
+  - 详细见https://www.cnblogs.com/aspirant/p/9082858.html
 
