@@ -194,4 +194,4 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 
 用于确定spring创建bean实例的个数
 - singleton单例：在IOC容器仅存在一个Bean实例，Bean以单例方式存在，默认值
-- prototype：每次从容器中调用Bean时，都会返回一个
+- prototype：每次从容器中调用Bean时，都会返回一个新的实例，即每次调用getBean()时
