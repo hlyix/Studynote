@@ -1,4 +1,4 @@
-## Spring的核心
+## 一、Spring的核心
 
 - Spring的核心是IOC（控制反转）和面向切面(AOP)
   - 核心容器 ： beans、core、context、SpEL
