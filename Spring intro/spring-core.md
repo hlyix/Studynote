@@ -181,3 +181,4 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 
 ## 六、Bean的种类
 
+- 普通bean: 之前操作都是普通bean。<bean id = "" class="A">
