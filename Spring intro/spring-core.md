@@ -222,6 +222,7 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 模拟过程
 ```java
 A a = new A();
-a = B.bef
+a = B.before(a);
+a.init();
 ```
 
