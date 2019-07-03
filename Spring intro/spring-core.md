@@ -224,6 +224,8 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 A a = new A();
 a = B.before(a);
 a.init();
-a = 
+a = B.after(a);
+a.addUser();
+a.destory()
 ```
 
