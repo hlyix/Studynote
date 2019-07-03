@@ -157,7 +157,7 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 
 实例化Bean的方式：
 - 默认构造：就是普通的bean
-- 静态工厂：自己写个工厂，专门用静态方法生成类
+- 静态工厂：自己写个工厂，专门用静态方法生成类实例
 - 实例工厂：实例工厂，先new个实例工厂，再用实例工厂生成类实例
 
 详细见：https://blog.csdn.net/small__snail__5/article/details/87903578
@@ -177,7 +177,7 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ```xml
 <!--创建工厂实例-->
 <bean id="myBeanFactory" class="com.package.MyBeanFactory"></bean>
-<!--创建工厂实例-->
+<!--工厂生成实例-->
 <bean id="UserService" facotry-bean="myBeanFactoryId" factory-method="createService">
 ```
 
