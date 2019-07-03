@@ -207,7 +207,7 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 ### 1） 初始化和销毁
 - 目标方法执行前和执行后，将进行初始化或销毁
 - 初始化一般用来准备数据
-- 
+- 销毁方法一般用于清理资源。
 ```xml
 <bean id="" class=""  init-method="初始化方法名称" destory-method = "销毁方法名称">
 ```
