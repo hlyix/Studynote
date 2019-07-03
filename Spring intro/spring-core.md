@@ -216,6 +216,6 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - 销毁方法的执行，容器必须close。```applicationContext.getClass().getMethod("close").invoke(applicationContext);```此方法接口中没有定义，由实现类提供
 
 ### 2) BeanPostProcessor后处理bean
-- spring提供一种机制，只要实现此接口BeanPostProcessor,并将实现类提供给spring容器，spring容器将自动执行，在初始化方法前执行before()，在
+- spring提供一种机制，只要实现此接口BeanPostProcessor,并将实现类提供给spring容器，spring容器将自动执行，在初始化方法前执行before()，在初始化方法后执行after()
 
 
