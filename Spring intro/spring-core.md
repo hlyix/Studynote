@@ -186,5 +186,6 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 - FactoryBean：是一个特殊的bean，具有工厂生产对象的能力，只能生成特定的对象。bean必须实现FactoryBean接口，此接口提供方法getObject()用于获得特定的bean。
 	<bean id = "" class="">先创建FB实例，使用调用getObject()方法，并返回方法的特定值。
 - BeanFactory和FactoryBean的对比
-- 
+  - beanfactory：生产任意的Bean
+  - FactoryBean：特殊的bean，用于生成另一个特定的bean。
 
