@@ -222,10 +222,10 @@ FileSystemXmlApplicationContext用于加载指定盘符下的xml（绝对路径�
 模拟过程
 ```java
 A a = new A();
-a = B.before(a);//就是给a加几个方法，到最后a就多出了几个功能，又不用直接在类A中加方法块代码，方便修饰类
+a = B.before(a);//将a的实例对象传递给后处理bean，可以生成代理对象并返回，就是给a加几个方法，到最后a就多出了几个功能，又不用直接在类A中加方法块代码，方便修饰类
 a.init();
 a = B.after(a);
-a.addUser();
+a.addUser(); //生成代理对象，目的在目标方法前后执行（例如：开启事务）
 a.destory()
 ```
 
