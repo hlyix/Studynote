@@ -273,4 +273,7 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 
 ### 4） 生命周期
 - 初始化：@PostConstruct
-- 销毁： @PreDest
+- 销毁： @PreDestroy
+
+### 5) 作用域
+- @Scope("prototype")多例
