@@ -241,4 +241,4 @@ a.destory()
 #{beanId} ： 另一个bean引用
 #{beanId.propName} ： 可以操作数据属性
 #{beanId.toString} : 执行方法
-#{T(类).字段|方法}：静态方法或
+#{T(类).字段|方法}：静态方法或字段
