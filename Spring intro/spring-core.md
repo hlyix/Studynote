@@ -298,4 +298,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - 接口 + 实现类：spring采用**jdk的动态代理**
 - 实现类:spring采用**cglib字节码增强** 
 
-## 三、AOP属于
+## 三、AOP专业术语
+1. 
