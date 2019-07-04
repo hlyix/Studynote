@@ -260,12 +260,13 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - @Service: service层
 - @Controller：web层
 
-### 3） 依赖注入
+### 3） 依赖注入，可以给私有字段设置，
 - 普通值：@Value("")
 - 引用值：
   - 方式1：按照【类型】注入
     - @Autowired：缺点如果一个接口有两个实现类，那么他不知道拿哪一个
   - 方式2：按照【名称】注入
-
-  - 方式3：按照
+    - @Autowired
+    - @Qualifier("名称")
+  - 方式3：按照【名称】注入
 
