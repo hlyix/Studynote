@@ -271,3 +271,6 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
   - 方式3：按照【名称】注入
     - @Resource("名称")
 
+### 4） 生命周期
+- 初始化：@PostConstruct
+- 销毁： @PreDest
