@@ -236,4 +236,5 @@ a.destory()
 
 ## SpEL【了解】
 - 对<property>进行统一编程，所有的内容都使用value
-	
+```<property name = "" value = "#{表达式}">```
+#{123}、#{'jack'}数字和字符串
