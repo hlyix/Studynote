@@ -259,3 +259,9 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - @Repository:dao层
 - @Service: service层
 - @Controller：web层
+
+### 3） 依赖注入
+- 普通值：@Value("")
+- 引用值：
+  - 方式1：按照【类型】注入
+  - 
