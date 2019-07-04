@@ -250,4 +250,4 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - 注解：就是一个类，使用@注解名称
 - 开发中：使用注解，取代xml配置文件。
 
-### 1）@Component 取代<bean.....>
+### 1）@Component(id) 取代<bean.....>
