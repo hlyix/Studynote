@@ -233,3 +233,7 @@ a.destory()
 ## P命名空间【了解】
 - 对 setter方法注入进行简化，替换<property>,而是在```<bean p:属性名="普通值">```
 - 配置文件头部加入```xmlns:p"http://www.springframework.org/schema/p"```
+
+## SpEL【了解】
+- 对<property>进行统一编程，所有的内容都使用value
+	
