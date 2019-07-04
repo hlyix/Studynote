@@ -295,6 +295,7 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 
 ## 二、AOP实现原理
 - AOP底层采用代理机制实现。
-- 接口 + 实现类：spring采用jdk的动态代理 
+- 接口 + 实现类：spring采用**jdk的动态代理**
+- 实现类:spring采用**cglib字节码增强** 
 
 ## 三、AOP属于
