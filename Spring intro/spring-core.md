@@ -229,12 +229,12 @@ a = B.after(a);
 a.addUser(); //生成代理对象，目的在目标方法前后执行（例如：开启事务、提交事务）
 a.destory()
 ```
-装配bean的其他
-### P命名空间【了解】
+## 九、装配bean的其他简洁方法
+### 1）P命名空间【了解】
 - 对 setter方法注入进行简化，替换<property>,而是在```<bean p:属性名="普通值">```
 - 配置文件头部加入```xmlns:p"http://www.springframework.org/schema/p"```
 
-### SpEL【了解】
+### 2）SpEL【了解】
 - 对<property>进行统一编程，所有的内容都使用value
 ```<property name = "" value = "#{表达式}">```
 #{123}、#{'jack'}数字和字符串
