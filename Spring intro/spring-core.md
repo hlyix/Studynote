@@ -256,3 +256,6 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 需要在配置文件中添加<context:component-scan base-package="需要扫描的包"/>
 
 ### 2) web开发，提供了3个@Component注解衍生注解（功能一样）
+- @Repository:dao层
+- @Service: service
+- @Controller
