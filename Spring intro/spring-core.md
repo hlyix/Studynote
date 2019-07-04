@@ -245,3 +245,5 @@ a.destory()
 
 ### 3)集合
 https://www.cnblogs.com/xiaostudy/p/9534164.html
+
+## 十、注解装配Bean
