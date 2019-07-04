@@ -257,5 +257,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 
 ### 2) web开发，提供了3个@Component注解衍生注解（功能一样）
 - @Repository:dao层
-- @Service: service
-- @Controller
+- @Service: service层
+- @Controller：web层
