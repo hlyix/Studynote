@@ -264,4 +264,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - 普通值：@Value("")
 - 引用值：
   - 方式1：按照【类型】注入
-  - 
+    - @Autowired：缺点如果一个接口
+  - 方式2：
