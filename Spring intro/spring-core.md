@@ -244,3 +244,4 @@ a.destory()
 #{T(类).字段|方法}：静态方法或字段
 
 ### 3)集合
+https://www.cnblogs.com/xiaostudy/p/9534164.html
