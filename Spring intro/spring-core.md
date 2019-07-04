@@ -301,5 +301,6 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 ## 三、AOP专业术语
 1. Target目标类：需要被代理的类，例如：UserService
 2. Joinpoint（连接点）：指那些可能被拦截到的方法，例如：所有的方法
-3. Pointcut（切入点）：以及被增强的连接点。
-4. advice(通知/增强)：增强的代码。例如：before(){...}、after(){...}
+3. Pointcut（切入点）：被增强的连接点。
+4. advice(通知/增强)：增强joinpoint的代码。例如：before(){...}、after(){...}
+5. weaving(织入)：是指把增强的advice代码
