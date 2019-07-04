@@ -260,7 +260,7 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - @Service: service层
 - @Controller：web层
 
-### 3） 依赖注入，可以给私有字段设置，
+### 3） 依赖注入，可以给私有字段设置，也可以给setter方法设置
 - 普通值：@Value("")
 - 引用值：
   - 方式1：按照【类型】注入
@@ -269,4 +269,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
     - @Autowired
     - @Qualifier("名称")
   - 方式3：按照【名称】注入
+    - @Resource("名称")
 
