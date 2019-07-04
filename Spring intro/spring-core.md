@@ -242,3 +242,5 @@ a.destory()
 #{beanId.propName} ： 可以操作数据属性
 #{beanId.toString} : 执行方法
 #{T(类).字段|方法}：静态方法或字段
+
+### 3)集合
