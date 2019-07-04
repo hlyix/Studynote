@@ -253,3 +253,4 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 ![12](pic/namespace.png)
 
 ### 1）@Component(id) 取代<bean.....>
+需要在配置文件中添加<context:component-scan base-package="需要扫描">
