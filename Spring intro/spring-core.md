@@ -248,4 +248,4 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 
 ## 十、注解装配Bean
 - 注解：就是一个类，使用@注解名称
-- 开发中：
+- 开发中：使用注解，取代xml配置文件
