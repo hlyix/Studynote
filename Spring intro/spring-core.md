@@ -231,4 +231,4 @@ a.destory()
 ```
 
 ## P命名空间【了解】
-- 对 setter方法注入进行简化，替换<property>
+- 对 setter方法注入进行简化，替换<property>,而是在```<bean p:属性名="普通值">```
