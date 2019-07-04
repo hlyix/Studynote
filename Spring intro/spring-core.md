@@ -240,4 +240,5 @@ a.destory()
 #{123}、#{'jack'}数字和字符串
 #{beanId} ： 另一个bean引用
 #{beanId.propName} ： 可以操作数据属性
-#{beanId.toS}
+#{beanId.toString} : 执行方法
+#{T(类).字段|方法}：静态方法或
