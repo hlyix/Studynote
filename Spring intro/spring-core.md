@@ -283,3 +283,4 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 # 第二部分
 
 ## 一、AOP
+利用AOP可以对业务逻辑的各个部分进行隔离。从而是的业务逻辑各部分之间的耦合度
