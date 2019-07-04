@@ -299,4 +299,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 - 实现类:spring采用**cglib字节码增强** 
 
 ## 三、AOP专业术语
-1. 
+1. target目标类：需要被代理的类
+2. Joinpoint（连接点）：指那些
