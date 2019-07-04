@@ -304,4 +304,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 3. Pointcut（切入点）：被增强的连接点。
 4. advice(通知/增强)：增强joinpoint的代码。例如：before(){...}、after(){...}
 5. weaving(织入)：是指把增强的advice代码应用到目标对象target来创建新的代理对象proxy的过程
-6. proxy（代理类）
+6. proxy（代理类）：aop生成的类
+7. Aspect（切面）：Pointcut切入点和Advice通知的结合
