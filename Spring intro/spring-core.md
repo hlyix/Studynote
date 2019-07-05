@@ -527,8 +527,10 @@ public class MyAspect implements MethodInterceptor {
     }
 ```
 结果
-```java
-
+```console
+前
+a_ioc add user
+后
 
 ```
 
