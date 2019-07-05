@@ -571,4 +571,5 @@ a_ioc add user
 - spring2.0以后新增了对AspectJ切点表达式支持
 - @Aspect是AspectJ1.5新增功能，通过注解技术，允许直接在Bean类中定义切面
 新版本的Spring框架，建议使用AspectJ方式来开发AOP
+- 主要用途：自定义开发
 
