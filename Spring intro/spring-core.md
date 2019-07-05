@@ -536,6 +536,9 @@ a_ioc add user
 
 ## 六、Spring AOP的配置（全自动）
 
-aop
+- aop编程
+  - 导入命名空间
+  - 使用```<aop:config>```进行配置
+    - ```<>
 
 
