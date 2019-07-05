@@ -500,5 +500,9 @@ public class MybeanFactory {
 ```
 
 其他的都差不多
-这里简单
+这里简单写下切面类
+```java
+
+
+```
 
