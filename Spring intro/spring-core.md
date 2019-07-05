@@ -573,4 +573,6 @@ a_ioc add user
 新版本的Spring框架，建议使用AspectJ方式来开发AOP
 - 主要用途：自定义开发
 
-### 2#
+### 2）切入点表达式
+1. execution（） 用于描述方法
+   - 语法：execution（修饰符 返回值 包.类.方法（参数）throws ）
