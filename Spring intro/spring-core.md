@@ -356,5 +356,68 @@ public class MyAspect {
 
 ```
 
+工厂类
+```java
+public class MyBeanFactory {
 
+    public static UserService createServie() {
+
+        //1.目标类
+        UserService userService = new UserServiceImpl();
+        //2.切面类
+        MyAspect myAspect = new MyAspect();
+        /*3.代理类:将目标类和切面类结合————>切面
+        *
+        * Proxy.newProxyInstance
+        *   参数1：loader,类加载器，动态代理类运行时创建，任何类都需要类加载器将其加载到内存
+        *   一般情况：当前类.class.getClassLoader();
+        *           目标类.getClass().get....
+        *   参数2： Class[] interfaces 代理类需要实现的所有接口
+        *           方式1：目标类实例.getClass().getInterfaces();注意：只能获得自己接口，不能获得父元素接口
+        *           方式2：new Class[]{UserService.class}
+        *           例如:jdbc -————> DriverManager 获得接口Connection 这个是父接口只能用方式2实现
+        *   参数3： InvocationHandler 处理类、接口，必须进行实现类，一般采用的都是匿名内部类的方式
+        *       提供了invoke方法，代理类的每一个方法执行时，都将去调用一次invoke
+        *           参数31：Object proxy：代理对象
+        *           参数32：Method method：代理对象当前执行的芳芳描述对象（反射）
+        *           参数33：Object[]args，目标类方法的参数
+        * */
+
+        UserService proxyService = (UserService) Proxy.newProxyInstance(MyBeanFactory.class.getClassLoader(),
+                userService.getClass().getInterfaces(),
+                new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                //前置方法
+                myAspect.before();
+                //目标类执行方法
+                Object obj = method.invoke(userService,args);
+                //后置方法
+                myAspect.after();
+                return obj;
+            }
+        });
+        return proxyService;
+
+    }
+}
+
+```
+测试类
+```java
+
+public class TestDemo {
+
+
+    @Test
+    public void demo02(){
+        MyBeanFactory myBeanFactory = new MyBeanFactory();
+        UserService userService = myBeanFactory.createServie();
+        userService.addUser();
+        userService.deleteUser();
+        userService.updateUser();
+    }
+}
+
+```
 
