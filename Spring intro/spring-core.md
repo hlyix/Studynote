@@ -600,4 +600,4 @@ a_ioc add user
        - (..)        表示任意参数
        - throws可省略，一般不用
 
-    - 综合```<aop>```
+    - 综合```<aop:pointcut expression="execution()||execution()" id="myPointCut">```
