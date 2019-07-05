@@ -568,4 +568,4 @@ a_ioc add user
 ## 七、AspectJ
 - AspectJ时基于java语言的AOP框架
 - spring2.0以后新增了对AspectJ切点表达式支持
-- @Aspect
+- @Aspect是AspectJ1.5新增功能，通过注解技术，
