@@ -545,6 +545,24 @@ a_ioc add user
       - ```advice-ref```通知引用
       - ```pointcut-ref```切入点引用
 
+配置文件
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="userServiceId" class="com.AOP.UserServiceImpl"/>
+    <bean id="myAspectId" class="com.AOP.MyAspect"/>
+    <aop:config>
+	<!--exucution代表执行的-->
+        <aop:pointcut expression="execution(* com.AOP.*.*(..))" id="myPointCut"/>
+        <aop:advisor advice-ref="myAspectId" pointcut-ref="myPointCut"/>
+    </aop:config>
+</beans>
 ```
-```
+
 
