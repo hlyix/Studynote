@@ -584,7 +584,7 @@ a_ioc add user
        - String  返回字符串
        - *       返回值任意
      - 包
-       - com.AOP.crm   固定包
-       - com.AOP.crm.*.service  代表这个crm包下面任意包目录下service（例如：com.AOP.crm.staff.service）
-       - com.AOP.crm..          代表crm包下面所有子包
-       - com.
+       - com.AOP.crm              固定包
+       - com.AOP.crm.*.service    代表crm包下面任意包目录下service（例如：com.AOP.crm.staff.service）
+       - com.AOP.crm..            代表crm包下面所有子包
+       - com.AOP.crm.*.service..  代表crm包下面任意包目录下servicex下的所有子包 
