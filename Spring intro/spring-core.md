@@ -600,4 +600,4 @@ a_ioc add user
        - (..)        表示任意参数
        - throws可省略，一般不用
 
-    - 综合```<aop:pointcut expression="execution()||execution()" id="myPointCut">```
+    - 综合```<aop:pointcut expression="execution(省略)||execution(省略)" id="myPointCut"/>```其中||代表还要插入其他类路径作为切点
