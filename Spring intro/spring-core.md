@@ -589,4 +589,7 @@ a_ioc add user
        - com.AOP.crm..            代表crm包下面所有子包
        - com.AOP.crm.*.service..  代表crm包下面任意包目录下servicex下的所有子包 
      - 类，[省略]
-       - UserServiceImpl          
+       - UserServiceImpl          指定类
+       - *Impl                    以Impl结尾的类
+       - User*                    以User开头
+       - *                        任意
