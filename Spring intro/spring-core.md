@@ -537,7 +537,7 @@ a_ioc add user
 ## 六、Spring AOP的配置（全自动）
 
 - aop编程
-  - 一定要导入aspectjweaver、springAOP和
+  - 一定要导入aspectjweaver、springAOP和AOPappliance的包
   - 导入命名空间
   - 使用```<aop:config>```进行配置，如果使用标签：```proxy-target-class="true"``` 声明时使用cglib代理
     - ```<aop:pointcut>```切入点，从目标对象获得具体方法
@@ -545,4 +545,6 @@ a_ioc add user
       - ```advice-ref```通知引用
       - ```pointcut-ref```切入点引用
 
+```
+```
 
