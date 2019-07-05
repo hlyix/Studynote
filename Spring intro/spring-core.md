@@ -468,4 +468,6 @@ public class MybeanFactory {
 }
 
 ```
+六、Spring半自动设置AOP
+
 
