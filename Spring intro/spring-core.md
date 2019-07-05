@@ -423,3 +423,49 @@ public class TestDemo {
 - 没有接口，只有实现类
 - 采用字节码增强框架cglib，在运行时创建目标类的子类，从而对目标类进行增强
 - 导入jar包，或者maven
+工厂类
+```java
+public class MybeanFactory {
+    public static UserServiceImpl createService() {
+        //1.目标类
+        UserServiceImpl userService = new UserServiceImpl();
+        //2.切面类
+        MyAspect myAspect = new MyAspect();
+        //3.代理类，采用cglib，底层创建目标类的子类
+
+        //3.1核心类
+        Enhancer enhancer = new Enhancer();
+        //3.2确定父类
+        enhancer.setSuperclass(userService.getClass());
+        /*3.3设置回调函数，MethodInterceptor接口等效于jdk代理的 InvocationHandler接口
+        *
+        * intercept等效jdk invoke()
+        * 参数1、参数2、参数3：InvocationHandler一样
+        * 参数4：methodProxy方法代理
+        */
+        enhancer.setCallback(new MethodInterceptor() {
+            @Override
+            public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+
+                //前
+                myAspect.before();
+                //方式1
+                //执行目标类的方法
+                Object obj = method.invoke(userService,args);
+                //方式2
+                //执行代理类的父类
+                methodProxy.invokeSuper(proxy,args);
+                //后
+                myAspect.after();
+                return obj;
+            }
+        });
+
+        //3.4 创建代理
+        UserServiceImpl proxyService = (UserServiceImpl) enhancer.create();
+        return proxyService;
+    }
+}
+
+```
+
