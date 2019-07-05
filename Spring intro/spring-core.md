@@ -592,4 +592,5 @@ a_ioc add user
        - UserServiceImpl          指定类
        - *Impl                    以Impl结尾的类
        - User*                    以User开头
-       - *                        任意
+       - ’*‘                        任意
+     - 方法，不能省略（具体使用和前面差不多，就多一个参数）
