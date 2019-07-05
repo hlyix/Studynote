@@ -601,3 +601,5 @@ a_ioc add user
        - throws可省略，一般不用
 
     - 综合```<aop:pointcut expression="execution(省略)||execution(省略)" id="myPointCut"/>```其中||代表还要插入其他类路径作为切点
+2. bean(id)对指定的bean所有的方法切入，例如bean("userServiceId")
+
