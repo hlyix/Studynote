@@ -502,7 +502,23 @@ public class MybeanFactory {
 其他的都差不多
 这里简单写下切面类
 ```java
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
 
+public class MyAspect implements MethodInterceptor {
+
+    public Object invoke(MethodInvocation methodInvocation) throws Throwable {
+        System.out.println("前");
+        //手动执行目标方法
+        methodInvocation.proceed();
+        System.out.println("后");
+        return null;
+    }
+}
+
+```
+测试
+```
 
 ```
 
