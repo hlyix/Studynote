@@ -407,8 +407,6 @@ public class MyBeanFactory {
 ```java
 
 public class TestDemo {
-
-
     @Test
     public void demo02(){
         MyBeanFactory myBeanFactory = new MyBeanFactory();
@@ -421,3 +419,4 @@ public class TestDemo {
 
 ```
 
+## 五、CGL
