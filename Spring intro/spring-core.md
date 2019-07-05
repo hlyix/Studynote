@@ -469,8 +469,36 @@ public class MybeanFactory {
 
 ```
 六、Spring半自动设置AOP
+
 配置文件
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--1. 创建目标类-->
+    <bean id = "userServiceId" class="com.semiAutoAOP.UserServiceImpl"/>
+
+    <!--2. 创建切面类-->
+    <bean id ="myAspectId" class="com.semiAutoAOP.MyAspect"/>
+
+    <!--3. 创建代理类-->
+    <!--使用工厂bean FactoryBean，底层调用getObject()，返回特殊bean，这里使用的ProxyFactoryBean生成特殊的代理bean-->
+    <bean id="proxyServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!--确定jdk代理的接口类们，可以通过<array>设置多个接口值，表示给多个接口和类添加环绕通知-->
+        <property name="interfaces" value="com.semiAutoAOP.UserService"/>
+        <!--确定目标类-->
+        <property name="target" ref="userServiceId"/>
+        <!--确定切面类-->
+        <property name="interceptorNames" value="myAspectId"></property>
+
+    </bean>
+
+</beans>
 ```
+
+其他的都差不多
+这里简单
 
