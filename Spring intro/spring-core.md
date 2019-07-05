@@ -580,4 +580,7 @@ a_ioc add user
        - public  公共方法
        - *       任意
      - 返回值
-       - 
+       - void    返回空
+       - String  返回字符串
+       - *       返回值任意
+     - 
