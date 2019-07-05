@@ -575,4 +575,9 @@ a_ioc add user
 
 ### 2）切入点表达式
 1. execution（） 用于描述方法
-   - 语法：execution（修饰符 返回值 包.类.方法（参数）throws ）
+   - 语法：execution（修饰符 返回值 包.类.方法（参数）throws 异常）
+     - 修饰符，一般省略
+       - public  公共方法
+       - *       任意
+     - 返回值
+       - 
