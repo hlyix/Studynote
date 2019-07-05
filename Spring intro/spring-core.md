@@ -306,3 +306,5 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 5. weaving(织入)：是指把增强的advice代码应用到目标对象target来创建新的代理对象proxy的过程
 6. proxy（代理类）：aop生成的类
 7. Aspect（切面）：Pointcut切入点和Advice通知的结合
+
+## 四、JDK动态代理
