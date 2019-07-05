@@ -538,7 +538,7 @@ a_ioc add user
 
 - aop编程
   - 导入命名空间
-  - 使用```<aop:config>```进行配置
+  - 使用```<aop:config>```进行配置，如果使用标签：```proxy-target-clasee``` 
     - ```<aop:pointcut>```切入点，从目标对象获得具体方法
     - ```<aop:advisor>```特殊的切面，只有一个通知和一个切入点
       - ```advice-ref```通知引用
