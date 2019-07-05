@@ -541,6 +541,7 @@ a_ioc add user
   - 使用```<aop:config>```进行配置
     - ```<aop:pointcut>```切入点，从目标对象获得具体方法
     - ```<aop:advisor>```特殊的切面，只有一个通知和一个切入点
-    - 
+      - ```advice-ref```通知引用
+      - ```pointcut-ref```切入点引用
 
 
