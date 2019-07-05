@@ -518,7 +518,17 @@ public class MyAspect implements MethodInterceptor {
 
 ```
 测试
+```java
+    @Test
+    public void demo() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/semiAutoAOP/applicationContext.xml");
+        UserService userService = (UserService) context.getBean("proxyServiceId");
+        userService.addUser();
+    }
 ```
+结果
+```java
+
 
 ```
 
