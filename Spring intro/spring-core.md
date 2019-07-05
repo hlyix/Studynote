@@ -558,7 +558,7 @@ a_ioc add user
     <bean id="userServiceId" class="com.AOP.UserServiceImpl"/>
     <bean id="myAspectId" class="com.AOP.MyAspect"/>
     <aop:config>
-	<!--exucution代表执行的目标类，第一个*代表返回任意值，第二个*代表-->
+	<!--exucution代表执行的目标类，第一个*代表返回任意值，第二个*代表任意类，第三个*代表任意方法，(..)代表方法内的参数任意-->
         <aop:pointcut expression="execution(* com.AOP.*.*(..))" id="myPointCut"/>
         <aop:advisor advice-ref="myAspectId" pointcut-ref="myPointCut"/>
     </aop:config>
