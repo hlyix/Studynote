@@ -314,6 +314,47 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 4. 测试
 
 目标类
+```java
+public interface UserService {
+     void addUser();
+     void updateUser();
+     void deleteUser();
+
+}
+
+public class UserServiceImpl implements UserService {
+    @Override
+    public void addUser() {
+        System.out.println("add a User");
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println("update a user");
+    }
+
+    @Override
+    public void deleteUser() {
+
+        System.out.println("delete a user");
+    }
+}
+
+
 ```
+切面类
+```java
+public class MyAspect {
+    public void before(){
+        System.out.println("前置执行方法");
+    }
+
+    public void after(){
+        System.out.println("后置执行方法");
+    }
+}
+
 ```
+
+
 
