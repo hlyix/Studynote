@@ -583,4 +583,6 @@ a_ioc add user
        - void    返回空
        - String  返回字符串
        - *       返回值任意
-     - 
+     - 包
+       - com.AOP.crm   固定包
+       - com.AOP.crm.*.service  代表这个包下面的所有service类
