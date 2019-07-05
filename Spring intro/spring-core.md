@@ -307,4 +307,6 @@ https://www.cnblogs.com/xiaostudy/p/9534164.html
 6. proxy（代理类）：aop生成的类
 7. Aspect（切面）：Pointcut切入点和Advice通知的结合
 
-## 四、JDK动态代理
+## 四、JDK动态代理 对“装饰者设计模式”进行简化，使用前提是必须有接口
+1. 目标类：接口+实现
+2. 切面类：
