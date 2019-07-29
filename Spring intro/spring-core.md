@@ -14,7 +14,7 @@ Spring的优点
   - **spring就是一个大工厂**，可以将所有对象创建和依赖关系维护，交给Spring管理。
   - Spring工程时用于生产bean，就不用再程序中new出来了
   - 用接口，例如一个IUser，其他实现所有的类都可以用IUser创建，那么我们只需在bean中改变IUser的各种实现类，相当于换了插头的接口，十分方便实现类的更换
- 
+
 - AOP编程的支持
   - 可以方便实现对程序进行权限拦截、运行监控等功能
 
@@ -23,7 +23,7 @@ Spring的优点
 
 - 方便集成各种优秀的跨国家
   - 对各种优秀框架（如：struct、Hibernate、MyBatis、Quartz等）的直接支持
- 
+
 - 降低JavaEE API的使用难度
   - 例如对JDBC、JavaMail、远程调用等都提供了封装，使这些API应用难度大大降低。  
 
@@ -602,4 +602,304 @@ a_ioc add user
 
     - 综合```<aop:pointcut expression="execution(省略)||execution(省略)" id="myPointCut"/>```其中||代表还要插入其他类路径作为切点
 2. bean(id)对指定的bean所有的方法切入，例如bean("userServiceId")
+
+
+
+### 3) AspectJ通知类型
+
+- before：前置通知
+- afterReturning：后置通知（常用于返回值校验）
+- around：环绕通知，必须手动执行目标方法
+- afterThrowing：方法抛出异常后执行，无异常不执行
+- after：最终通知
+
+```java
+//环绕通知
+try{
+    //前置：
+    before();
+    //手动执行目标方法
+    //后置
+    afterReturning();
+}catch(){
+    //抛出异常 
+    afterThrowing();
+}finally{
+    //最终 
+    after();
+}
+
+```
+
+记得导入aop-alliance、spring-aop、aspect、spring-aspect
+
+### 4）基于xml
+
+1. 目标类：接口+实现
+
+2. 切面类：编写多个通知，采用aspectj通知名称任意（方法名任意）
+
+3. aop编程，将通知应用到目标类
+
+4. 测试
+
+   ```xml
+   <aop:config>
+       <aop:aspect ref="myAspectId">
+           <!--子元素中有
+   <aop:pointcut>
+   <aop:before>
+   <aop:after>
+   <aop:afterReturning>
+   <aop:afterThrowing>
+   -->
+           <aop:pointcut expression="execution(* com.package.UserServiceImpl.*(..))" id="myPointcut">
+           </aop:pointcut>
+           <!--前置通知，method：通知即方法名。pointcut:切入点表达式，pointcut-ref切入点引用，可与其他通知共享切入点-->
+           <!--通知方法可以有参数
+            格式：public void myBefore(JoinPoint joinPoint)
+   		参数1：org.aspectj.lang.JointPoint 用于描述连接点（目标方法），获得目标方法方法名等
+   -->
+           <aop:before method="myBefore" pointcut-ref="myPointcut"/>
+           <!--后置通知
+   		<aop:after-returning method="" pointcut-ref="" returning="ret"/>
+   		returning是通知方法的第二个参数名称
+   		通知方法的格式：public void myAfterReturning(JoinPoint joinPoint,Object ret)
+   		参数1：连接点描述
+   		参数2：类型Object，参数名returning="ret"配置的,表示是目标方法的返回值
+   -->
+           <!--环绕通知
+   		<aop:around method="" pointcut-ref=""/>
+   		通知方法格式:public Object myAround(ProceedingJoinPoint joinPoit) throws Throwable{}
+   		返回值类型：Object
+   		方法名：任意
+   		参数：org.aspectj.lang.ProceedingJoinPoint
+   		抛出异常
+   		执行目标方法：Object obj = joinPoint.proceed();
+   		例如:<aop:around method="myAround" pointcut-ref="myPointCut">
+   -->
+       </aop:aspect>
+   </aop:config>
+   ```
+
+### 5) 基于注解的切面配置
+
+直接上实例
+
+UserServiceImpl类
+
+```java
+@Service("userServiceId")
+public class UserServiceImpl implements UserService {
+    public void addUser() {
+        System.out.println("a_ioc add user");
+    }
+    public void deleteUser() {
+        System.out.println("a_ioc delete user");
+    }
+}
+```
+
+切面MyAspect类
+
+```java
+@Component
+@Aspect
+public class MyAspect  {
+    @Around("execution(* com.AnnotationAOP.UserServiceImpl.*(..))")
+    public Object myAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("前");
+        //手动执行目标方法
+        joinPoint.proceed();
+        System.out.println("后");
+        return null;
+    }
+   
+    
+    /*
+    也可以直接设置pointcut切点
+     @Pointcut()
+    private void mypointcut("execution(* com.AnnotationAOP.UserServiceImpl.*(..))"){  
+    }
+    然后直接在@Around(value = "mypointcut")
+    */
+}
+```
+
+applicationContext.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--扫描bean配置-->
+    <context:component-scan base-package="com.AnnotationAOP" />
+    <!--自动扫描aop注解-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>
+```
+
+测试类
+
+```java
+public class Test {
+    @org.junit.Test
+    public void demo(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/AnnotationAOP/applicationContext.xml");
+        UserService userService = (UserService) applicationContext.getBean("userServiceId");
+        userService.addUser();
+    }
+}
+```
+
+### 6) aop注解总结
+
+@Aspect 声明切面，修饰切面类，从而获得通知
+
+通知：
+
+@Before 前置
+
+@AfterReturning 后置
+
+@Around 环绕
+
+@After 最终
+
+@AfterThrowing 抛出异常
+
+切入点：
+
+@PointCut：修饰方法 ```private void xxxx(){ }```之后通过“方法名”获得切入点引用
+
+
+
+
+
+# 第三部分 
+
+## 事务管理
+
+### 1 导入三个接口的包
+
+- ```PlatformTransactionManager  ```平台事务管理器，spring要管理事务，必须使用事务管理器
+
+​        进行事务配置时，必须**配置事务管理器**。
+
+- ```TransactionDefinition```：事务详情（事务定义、事务属性），spring用于确定事务具体详情，
+
+​        例如：隔离级别、是否只读、超时时间等
+
+​        进行事务配置时，**必须配置详情**。spring将配置项封装到该对象实例。
+
+![2](pic\transactiondef.png)
+
+> 其中掌握着三个过渡行为
+>
+> 1）PROPAGATION_REQUIRED , required , 必须  【默认值】
+>
+> ​        支持当前事务，A如果有事务，B将使用该事务。
+>
+> ​        如果A没有事务，B将创建一个新的事务。
+>
+> 2）PROPAGATION_REQUIRES_NEW ， requires_new ，必须新的
+>
+> ​        如果A有事务，将A的事务挂起，B创建一个新的事务
+>
+> ​        如果A没有事务，B创建一个新的事务
+>
+> 3）PROPAGATION_NESTED ，nested ，嵌套
+>
+> ​        A和B底层采用保存点机制，形成嵌套事务。
+
+- ```TransactionStatus```：事务状态，spring用于记录当前事务运行状态。例如：是否有保存点，事务是否完成。
+
+​        spring底层根据状态进行相应操作。
+
+![1](pic/transactionStatus.png)
+
+
+
+三个包分别是：*spring-jdbc*  *spring-orm*  *spring-tx*
+
+
+
+### 2 介绍注解类型的事务管理（最方便）
+
+xml配置文件如下
+
+不要忘记导入命名空间：http://www.springframework.org/schema/tx 
+       					   http://www.springframework.org/schema/tx/spring-tx.xsd
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+       					   http://www.springframework.org/schema/aop 
+       					   http://www.springframework.org/schema/aop/spring-aop.xsd
+       					   http://www.springframework.org/schema/context 
+       					   http://www.springframework.org/schema/context/spring-context.xsd
+       					   http://www.springframework.org/schema/tx 
+       					   http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 创建数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/study"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="10086"></property>
+	</bean>
+	
+	<!-- 配置dao 这里和我的不一样，他是dao继承了jdbcDaoSupport，我直接用的是druid用@dao配置-->
+	<bean id="accountDaoImple" class="cn.lm.tx03_xml.AccountDaoImple">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 配置service -->
+	<bean id="accountServiceImplId" class="cn.lm.tx03_xml.AccountServiceImpl">
+		<property name="accountDao" ref="accountDaoImple"></property>
+	</bean>
+	
+<!-- 4 事务管理 -->
+	<!-- 4.1 事务管理器 -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 4.2 将管理器交予spring 
+		* transaction-manager 配置事务管理器
+		* proxy-target-class
+			true ： 底层强制使用cglib 代理
+	-->
+	<tx:annotation-driven transaction-manager="txManager"/>
+
+	
+	<!-- AOP编程，目标类有ABCD（4个连接点），切入点表达式 确定增强的连接器，从而获得切入点：ABC -->
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.lm.tx03_xml.*.*(..))"/>
+	</aop:config>
+</beans>
+
+
+```
+
+要配置事务的服务（类或者类中的方法加注解都行）
+
+```java
+@Transactional(propagation=Propagation.REQUIRED , isolation = Isolation.DEFAULT)
+public class AccountServiceImpl implements AccountService {
+
+```
+
+
 
