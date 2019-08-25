@@ -94,3 +94,33 @@ public class HelloKryo {
 此文介绍了如何在dubbo项目中设置kryo
 
 http://dangdangdotcom.github.io/dubbox/serialization.html
+
+
+
+kryo不注册缺点
+
+1. There are security implications because it allows deserialization to create instances of any class. Classes with side effects during construction or finalization could be used for malicious purposes.
+2. Instead of writing a varint class ID (often 1-2 bytes), the fully qualified class name is written the first time an unregistered class appears in the object graph. Subsequent appearances of that class within the same object graph are written using a varint. Short package names could be considered to reduce the serialized size.
+
+
+
+为什么有无参构造方法会好一点
+
+#### InstantiatorStrategy
+
+Kryo provides DefaultInstantiatorStrategy which creates objects using ReflectASM to call a zero argument constructor. If that is not possible, it uses reflection to call a zero argument constructor. If that also fails, then it either throws an exception or tries a fallback InstantiatorStrategy. Reflection uses `setAccessible`, so a private zero argument constructor can be a good way to allow Kryo to create instances of a class without affecting the public API.
+
+DefaultInstantiatorStrategy is the recommended way of creating objects with Kryo. It runs constructors just like would be done with Java code. Alternative, extralinguistic mechanisms can also be used to create objects. The [Objenesis](http://objenesis.org/)StdInstantiatorStrategy uses JVM specific APIs to create an instance of a class without calling any constructor at all. Using this is dangerous because most classes expect their constructors to be called. Creating the object by bypassing its constructors may leave the object in an uninitialized or invalid state. Classes must be designed to be created in this way.
+
+Kryo can be configured to try DefaultInstantiatorStrategy first, then fallback to StdInstantiatorStrategy if necessary.
+
+```
+kryo.setInstantiatorStrategy(new DefaultInstantiatorStrategy(new StdInstantiatorStrategy()));
+```
+
+Another option is SerializingInstantiatorStrategy, which uses Java's built-in serialization mechanism to create an instance. Using this, the class must implement java.io.Serializable and the first zero argument constructor in a super class is invoked. This also bypasses constructors and so is dangerous for the same reasons as StdInstantiatorStrategy.
+
+```
+kryo.setInstantiatorStrategy(new DefaultInstantiatorStrategy(new SerializingInstantiatorStrategy()));
+```
+
